@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verifycomb.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jhgoncal <jhgoncal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/19 10:49:59 by jf                #+#    #+#             */
-/*   Updated: 2023/03/19 11:34:53 by jf               ###   ########.fr       */
+/*   Created: 2021/09/20 15:11:26 by jhgoncal          #+#    #+#             */
+/*   Updated: 2021/09/25 07:34:41 by jhgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 
-int	main()
+void	ft_putstr(char *str)
 {
-	int count = 1;
-	int i = -1;
-	int board[] = {3, 2, 1, 4};
-
-	while (++i <= 4)
-	{
-		if (board[i] == 4)
-			break;
-		else if (board[i] < board[i + 1])
-			count++;
-	}
-	printf("%i", count);
+	while (*str)
+		write(1, str++, 1);
 }

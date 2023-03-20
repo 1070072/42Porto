@@ -1,62 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 16:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 09:16:12 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/20 09:19:03 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/20 09:58:50 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int 	ft_strlen(char *str)
+char	*ft_strstr(char *str, char *tofind)
 {
-	int i;
+	int		i;
+	int		j;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
-
-	return (i);	
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int l;	
-	int i;
-
-	l = ft_strlen(dest);
-	
-	i = 0;
-	while(src[i] != '\0')
-	{
-		dest[l] = src[i];
-		i++;
-		l++;
+	j = 0;
+	if (tofind[j] == '\0')
+		return(str);	
+	while(str[i] != '\0')
+	{	
+		while (str[i + j] == tofind[j] && str[i + j] != '\0')
+			j++;
+		if (tofind[j] == '\0')
+			return(str + i);
+		i++;			
+		j = 0;
 	}
-	dest[l + i] = '\0';
-	
-	return (dest);
+	return (0);
 }
 
+/*
 int	main(void)
 {
-	char *str1;
-	char *str2;
+	char 		*str1;
+	char 		*str2;
 	
-	str1 = calloc (9, sizeof(char));
-	strcpy(str1, "ola ");
-
+	str1 = calloc (8, sizeof(char));
+	strcpy(str1, "ola 42!");
+	
 	str2 = calloc (4, sizeof(char));
 	strcpy(str2, "42!");
 	
-	printf("%s", ft_strcat(str1, str2));
+	printf("%s", ft_strstr(str1, str2));
 	printf("\n");
 	return (0);		
 }
+*/
