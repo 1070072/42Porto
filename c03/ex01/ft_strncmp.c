@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:06:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/16 14:24:00 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:29:59 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
-	
+	unsigned int	i;
+
 	i = 0;
 	if (n == 0)
 	{
@@ -30,12 +30,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	if (i < n)
 		return ((unsigned char) s1[i] - (unsigned char) s2[i]);
-	else 
-		return (0);	
+	else
+		return (0);
 }
 
-/*
-int	main(void)
+/*int	main(void)
 {
 	unsigned int n;
 	char *s1;
@@ -60,10 +59,16 @@ int	main(void)
 	s6 = "abcdefghi";
 	s7 = "";
 	printf("(s1, s2)= %i\n", ft_strncmp(s1, s2, n));
+	printf("(s1, s2)= %i\n", strncmp(s1, s2, n));
 	printf("(s1, s3)= %i\n", ft_strncmp(s1, s3, n));
+	printf("(s1, s3)= %i\n", strncmp(s1, s3, n));
 	printf("(s1, s4)= %i\n", ft_strncmp(s1, s4, n));
+	printf("(s1, s4)= %i\n", strncmp(s1, s4, n));
 	printf("(s1, s5)= %i\n", ft_strncmp(s1, s5, n));
+	printf("(s1, s5)= %i\n", strncmp(s1, s5, n));
 	printf("(s1, s6)= %i\n", ft_strncmp(s1, s6, n));
+	printf("(s1, s6)= %i\n", strncmp(s1, s6, n));
 	printf("(s1, s7)= %i\n", ft_strncmp(s1, s7, n));
+	printf("(s1, s7)= %i\n", strncmp(s1, s7, n));
 	return(0);
 }*/

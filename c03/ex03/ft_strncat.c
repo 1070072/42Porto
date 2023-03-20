@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 09:02:20 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 09:17:58 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:36:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,18 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char 		*str1;
-	char 		*str2;
+	char			*str1;
+	char			*str2;
 	unsigned int	n;
-	
-	n = 1;	
+
+	n = 1;
 	str1 = calloc (9, sizeof(char));
 	strcpy(str1, "ola ");
-	
 	str2 = calloc (4, sizeof(char));
 	strcpy(str2, "42!");
-	
 	printf("%s", ft_strncat(str1, str2, n));
 	printf("\n");
-	return (0);		
-}
+	return (0);
+}*/

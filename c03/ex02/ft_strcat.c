@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 09:16:12 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:34:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,43 @@
 #include <stdio.h>
 #include <string.h>
 
-int 	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	i++;
-
-	return (i);	
+	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+/*char	*ft_strcat(char *dest, char *src)
 {
-	int l;	
-	int i;
+	int	l;
+	int	i;
 
 	l = ft_strlen(dest);
-	
 	i = 0;
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[l] = src[i];
 		i++;
 		l++;
 	}
 	dest[l + i] = '\0';
-	
 	return (dest);
 }
 
 int	main(void)
 {
-	char *str1;
-	char *str2;
-	
+	char	*str1;
+	char	*str2;
+
 	str1 = calloc (9, sizeof(char));
 	strcpy(str1, "ola ");
-
 	str2 = calloc (4, sizeof(char));
 	strcpy(str2, "42!");
-	
 	printf("%s", ft_strcat(str1, str2));
 	printf("\n");
-	return (0);		
-}
+	return (0);
+}*/
