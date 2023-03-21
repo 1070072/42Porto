@@ -3,10 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 17:03:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:00:28 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdio.h>
+
+/*int	main(void)
+{
+	// teste com bases binarias
+	printf("Bases binarias:\n");
+	ft_atoi_base_test("\n \t\r \v \f++++--1000,.fs", "01", 8);
+	ft_atoi_base_test("\n \t\r \v \f++++--*/*/**,.fs", "/*", 43);
+	// teste com bases octais
+	printf("Bases octais:\n");
+	ft_atoi_base_test("\n \t\r \v \f++-++--205,.fs", "01234567", -133);
+	ft_atoi_base_test("\n \t\r \v \f+-+++--fdd,.fs", "abcdefgh", -347);
+	// teste com bases decimais
+	printf("Bases decimais:\n");
+	ft_atoi_base_test("\n \t\r \v \f++-++--2147483648,.fs", "0123456789", -2147483648);
+	ft_atoi_base_test("\n \t\r \v \f+-+++-+jjf,.fs", "abcdefghij", 995);
+	// teste com bases hexadecimais
+	printf("Bases hexadecimais:\n");
+	ft_atoi_base_test("\n \t\r \v \f++-+-+--F0FA,.fs", "0123456789ABCDEF", 61690);
+	ft_atoi_base_test("\n \t\r \v \f+-+++-+ninc,.fs", "abcdefghijklmnop", 55506);
+	// teste com bases invalidas
+	printf("Bases invalidas:\n");
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123456678", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123\n", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123\v", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123\t", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123\f", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123\r", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123 ", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123+", 0);
+	ft_atoi_base_test("\n \t\r ++-++-123456,das", "0123-", 0);
+}*/
