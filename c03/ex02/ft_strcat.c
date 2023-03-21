@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 08:45:40 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 10:07:50 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,14 @@ char	*ft_strcat(char *dest, char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[l] = src[i];
+		dest[l + i] = src[i];
 		i++;
-		l++;
 	}
 	dest[l + i] = '\0';
 	return (dest);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	*str1;
 	char	*str2;
@@ -54,4 +53,4 @@ char	*ft_strcat(char *dest, char *src)
 	printf("%s", ft_strcat(str1, str2));
 	printf("\n");
 	return (0);
-}*/
+}
