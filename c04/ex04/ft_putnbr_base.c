@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:24:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 15:28:32 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:31:02 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_check_base(char *base)
 	{
 		if (base[i] == '\0' || base[i] == '+' 
 		|| base[i] == '-' || base[i] == base [i + 1] 
-		|| ft_strlen(base) == 1)
+		|| ft_strlen(base) <= 1)
 		return (0);
 		else
 		return (1);
@@ -48,24 +48,26 @@ int	ft_check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int l;
-	int n;
+	unsigned char l;
+	unsigned int n;
+	unsigned int j;
+	
+	j = ft_strlen(base);
 
 	if (ft_check_base(base) == 0)
 		return;
-	/*else if (nbr < 0)
+	if (nbr < 0)
 	{
 		ft_putchar ('-');
-		ft_putnbr_base((nbr * - 1), base);
-	}*/
-	else if (nbr > 9)
-	{
-		ft_putnbr_base((nbr / 2), base);
-		ft_putchar(base[nbr % 2]);
+		n = -nbr;
 	}
 	else
-		ft_putchar(base[nbr]);
-}
+	n = nbr;
+	if (n >= j)
+		ft_putnbr_base((n / j), base);
+	l = base[n % j];
+	write(1, &l, 1);
+}		
 
 int		main(void)
 {
