@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 09:19:03 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 09:58:50 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 08:45:47 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,20 @@ char	*ft_strstr(char *str, char *tofind)
 	i = 0;
 	j = 0;
 	if (tofind[j] == '\0')
-		return(str);	
-	while(str[i] != '\0')
-	{	
+		return (str);
+	while (str[i] != '\0')
+	{
 		while (str[i + j] == tofind[j] && str[i + j] != '\0')
 			j++;
 		if (tofind[j] == '\0')
-			return(str + i);
-		i++;			
+			return (str + i);
+		i++;
 		j = 0;
 	}
 	return (0);
 }
 
-/*
-int	main(void)
+/*int	main(void)
 {
 	char 		*str1;
 	char 		*str2;
@@ -50,5 +49,4 @@ int	main(void)
 	printf("%s", ft_strstr(str1, str2));
 	printf("\n");
 	return (0);		
-}
-*/
+}*/
