@@ -6,11 +6,13 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:24:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 13:06:18 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:28:32 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <limits.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -21,8 +23,9 @@ int ft_strlen(char *base)
 {
 	int i;
 	
-	i = -1;
-	while (base[++i] != '\0')
+	i = 0;
+	while (base[i] != '\0')
+		i++;
 	return (i);
 }
 
@@ -40,22 +43,29 @@ int	ft_check_base(char *base)
 		else
 		return (1);
 	}
+	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	if (ft_check_base)
-	return;
+	int l;
+	int n;
+
+	if (ft_check_base(base) == 0)
+		return;
+	/*else if (nbr < 0)
+	{
+		ft_putchar ('-');
+		ft_putnbr_base((nbr * - 1), base);
+	}*/
+	else if (nbr > 9)
+	{
+		ft_putnbr_base((nbr / 2), base);
+		ft_putchar(base[nbr % 2]);
+	}
 	else
-		ft_putchar(base [nbr / 16]);
-		ft_putchar(base [nbr % 16]);
-
-	
-
-	
+		ft_putchar(base[nbr]);
 }
-
-
 
 int		main(void)
 {
