@@ -6,13 +6,24 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:24:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 12:57:48 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:06:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+int ft_strlen(char *base)
+{
+	int i;
+	
+	i = -1;
+	while (base[++i] != '\0')
+	return (i);
 }
 
 int	ft_check_base(char *base)
@@ -23,16 +34,23 @@ int	ft_check_base(char *base)
 	while (base[++i] != '\0')
 	{
 		if (base[i] == '\0' || base[i] == '+' 
-		|| base[i] == '-' || base[i] == base [i + 1])
+		|| base[i] == '-' || base[i] == base [i + 1] 
+		|| ft_strlen(base) == 1)
 		return (0);
 		else
 		return (1);
 	}
 }
+
 void	ft_putnbr_base(int nbr, char *base)
 {
 	if (ft_check_base)
 	return;
+	else
+		ft_putchar(base [nbr / 16]);
+		ft_putchar(base [nbr % 16]);
+
+	
 
 	
 }
