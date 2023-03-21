@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:10:59 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 12:19:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:17:47 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int ret;
+	int	i;
+	int	ret;
 	int	sign;
-	
+
 	i = 0;
 	sign = 1;
 	ret = 0;

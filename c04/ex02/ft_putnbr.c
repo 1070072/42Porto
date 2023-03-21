@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:18:15 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 08:54:58 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:08:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putnbr(int nb)
 		ft_putchar (nb + '0');
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_putnbr(15164);
-}
+}*/
