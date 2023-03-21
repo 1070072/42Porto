@@ -6,7 +6,7 @@
 /*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:24:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 16:31:02 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/21 16:47:30 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_check_base(char *base)
 		else
 		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
