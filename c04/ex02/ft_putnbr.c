@@ -6,68 +6,38 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:18:15 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 17:38:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 08:49:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write (1, &c, 1);
 }
 
-void	ft_print(int count, int j[])
+void	ft_putnbr(int nb)
 {
-	int	count2;
-
-	count2 = 0;
-	while (count2 < count)
+	if (nb == -2147483648)
 	{
-		ft_putchar(j[count2] + 48);
-		count2++;
+		ft_putchar ('-');
+		ft_putchar ('2');
+		ft_putnbr (147483648);
 	}
-}
-
-void	ft_getnumbers(int count, int nb)
-{
-	int	split;
-	int	num;
-	int	div2;
-	int	div3;
-	int	j[10];
-
-	num = nb;
-	div2 = 1;
-	div3 = 0;
-	split = count;
-	while (split > 0)
+	else if (nb < 0)
 	{
-		div2 = num % 10;
-		j[split - 1] = div2;
-		div3 = num / 10;
-		num = div3;
-		split--;
+		ft_putchar ('-');
+		ft_putnbr (nb * -1);
 	}
-	ft_print(count, j);
-}
-
-void	ft_count(int nb)
-{
-	int	count;
-	int	div;
-	int	n_div;
-
-	count = 0;
-	n_div = nb;
-	div = 1;
-	while (div > 0)
+	else if (nb > 9)
 	{
-		div = n_div / 10;
-		n_div = div;
-		count++;
+		ft_putnbr (nb / 10);
+		ft_putnbr (nb % 10);
 	}
-	ft_getnumbers(count, nb);
+	else
+		ft_putchar (nb + '0');
 }
 
 void	ft_putnbr(int nb)
