@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 09:19:03 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/20 13:38:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 08:45:47 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_strstr(char *str, char *tofind)
 	}
 	return (0);
 }
+
 /*int	main(void)
 {
 	char 		*str1;
