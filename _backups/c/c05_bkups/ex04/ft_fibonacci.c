@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 08:45:08 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 16:52:25 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/21 18:37:22 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/22 16:07:30 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 
-int	main(int count, char **value)
+int	ft_fibonacci(int index)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
-	while (j < count)
-	{
-		while (value[j][i] != '\0')
-		{
-			write(1, &value[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		j++;
-	}
-	return (0);
+	if (index < 0)
+		return (-1);
+	else if (index < 2)
+		return (index);
+	else
+		return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
 }
+
+/*int	main(void)
+{
+	int res;
+	int index;
+
+	index = 0;
+	while (index < 12)
+	{
+		res = ft_fibonacci(index);
+		printf ("%d, ", res);
+		index++;
+	}
+	res = ft_fibonacci(index);
+	printf ("%d\n", res);
+	return (0);
+}*/

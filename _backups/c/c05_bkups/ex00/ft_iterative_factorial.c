@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 08:45:08 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 16:52:25 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/21 18:35:19 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/22 16:03:07 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 
-int	main(int count, char **value)
+int	ft_iterative_factorial(int nb)
 {
-	int	i;
-	int	j;
+	int	f;
 
-	i = 0;
-	j = 1;
-	while (j < count)
+	f = 1;
+	if (nb < 0)
+		return (0);
+	else
 	{
-		while (value[j][i] != '\0')
+		while (nb > 0)
 		{
-			write(1, &value[j][i], 1);
-			i++;
+			f = f * nb;
+			nb--;
 		}
-		write(1, "\n", 1);
-		i = 0;
-		j++;
+	}
+	return (f);
+}
+
+/*int	main(void)
+{
+	int n;
+	int res;
+
+	n = 0;
+	while (n <= 10)
+	{
+		res = ft_iterative_factorial(n);
+		printf("n = %d, n! = %d\n", n, res);
+		n++;
 	}
 	return (0);
-}
+}*/
