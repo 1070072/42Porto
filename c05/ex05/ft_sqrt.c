@@ -6,12 +6,13 @@
 /*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 12:30:05 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 14:49:05 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 int	ft_sqrt(int nb)
 {
@@ -85,11 +86,20 @@ void	ft_sqrt_error_test()
 
 int		main(void)
 {
+	time_t time_bef;
+	time(&time_bef);
+
 	// mostrando apenas resultados diferentes de 0 para conferir
 	printf("[1] Casos em que a raiz existe.\n");
 	ft_sqrt_test();
 	// mostrando apenas resultados iguais a zero(checar as condicoes de erro)
 	printf("[2] Casos em que a raiz nao existe.\n");
 	ft_sqrt_error_test();
+	
+	time(&time_bef);
+	if ((time_bef = (time(NULL) - time_bef)) > 10)
+		printf("KO, timeout! max time is 10 seconds, took %li\n", time_bef);
+	else
+		printf("OK, time: %li seconds\n", time_bef);
 	return (0);
 }
