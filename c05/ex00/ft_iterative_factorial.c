@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:35:19 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 09:03:28 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/22 09:50:19 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,16 @@
 int ft_iterative_factorial(int nb)
 {
 	int f;
-
+	
 	f = 1;
-	if (nb >= 0)
+	if (nb < 0)
+	return (0);
+	else
 	{
 		while (nb > 0)
 		{
 			f = f * nb;
 			nb--;
-		}
-	}
-	else
-	{
-		while (nb < 0)
-		{
-			f = f * nb;
-			nb++;
 		}
 	}
 	return (f);	
@@ -42,7 +36,7 @@ int	main(void)
 	int n;
 	int res;
 
-	n = -5;
+	n = 0;
 	while (n <= 10)
 	{
 		res = ft_iterative_factorial(n);

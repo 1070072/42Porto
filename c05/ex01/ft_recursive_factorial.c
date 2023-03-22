@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:35:55 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 09:16:57 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:06:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,12 @@
 
 int	ft_recursive_factorial(int nb)
 {
-	int f;
-	
-	f = 1;
-	if (nb >= 0)
-	{
-		while (nb > 0)
-		{	
-			nb = nb * ft_recursive_factorial(nb - 1);
-		}
-	}
+	if (nb < 0)
+	return (0);
+	else if (nb == 0 || nb == 1)
+		return (1);
 	else
-	{
-		while (nb < 0)
-		{
-			ft_recursive_factorial(++nb);
-			f = (nb + 1) * nb;
-		}
-	}
-	return(f);
+		return (nb * ft_recursive_factorial(nb - 1));
 }
 
 int	main(void)
@@ -41,7 +28,7 @@ int	main(void)
 	int n;
 	int res;
 
-	n = -5;
+	n = 0;
 	while (n <= 10)
 	{
 		res = ft_recursive_factorial(n);
