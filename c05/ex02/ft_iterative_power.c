@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:36:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 10:18:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:35:15 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_iterative_power(int nb, int power)
 
 	f = nb;
 	if (power < 0)
-		return (1);
-	else if (power == 0)
 		return (0);
+	else if (power == 0)
+		return (1);
 	else
 	{
 		while (--power > 0)
