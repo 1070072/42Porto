@@ -6,7 +6,7 @@
 /*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:48 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 13:18:14 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 14:26:38 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,22 @@
 
 int	ft_is_prime(int nb)
 {
-
+	int i;
+	int count;
 	
-
+	i = 1;
+	count = 0;
+	if (nb <= 1)
+		return (0);
+	while (++i <= (nb / 2))
+	{
+		if (nb % i == 0)
+			count++;
+	}
+	if (count == 0)
+		return (1);
+	else
+		return (0);
 }
 
 void	ft_is_prime_test()
