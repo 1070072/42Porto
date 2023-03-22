@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:22 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 11:52:25 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 16:07:30 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	ft_fibonacci(int index)
 	else if (index < 2)
 		return (index);
 	else
-		return(ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
+		return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int res;
 	int index;
@@ -38,4 +38,4 @@ int	main(void)
 	res = ft_fibonacci(index);
 	printf ("%d\n", res);
 	return (0);
-}
+}*/

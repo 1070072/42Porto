@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 14:49:05 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 16:09:11 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	ft_sqrt(int nb)
 {
-	int i;
-	int sq;
-	int original;
+	int	i;
+	int	sq;
+	int	original;
 
 	i = 0;
 	sq = 1;
@@ -42,11 +42,12 @@ int	ft_sqrt(int nb)
 	return (i);
 }
 
-void	ft_sqrt_test()
+/*void	ft_sqrt_test()
 {
 	int res;
 	int offset;
-	int test_nums[11] = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 1000014129};
+	int test_nums[11] = {1, 4, 9, 16, 25, 
+	36, 49, 64, 81, 100, 1000014129};
 	int cheatsheet[11] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 31623};
 
 	offset = 0;
@@ -55,7 +56,8 @@ void	ft_sqrt_test()
 		res = ft_sqrt(test_nums[offset]);
 		if (res == 0 || res != cheatsheet[offset])
 		{
-			printf("[1] KO, n = %d,expected: %d, got: %d.\n", test_nums[offset], cheatsheet[offset], res);
+			printf("[1] KO, n = %d,expected: %d, got: %d.\n", 
+			test_nums[offset], cheatsheet[offset], res);
 			return ;
 		}
 		offset++;
@@ -102,4 +104,4 @@ int		main(void)
 	else
 		printf("OK, time: %li seconds\n", time_bef);
 	return (0);
-}
+}*/

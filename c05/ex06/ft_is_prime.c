@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:48 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 14:26:38 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 16:10:12 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_is_prime(int nb)
 {
-	int i;
-	int count;
-	
+	int	i;
+	int	count;
+
 	i = 1;
 	count = 0;
 	if (nb <= 1)
@@ -33,11 +33,12 @@ int	ft_is_prime(int nb)
 		return (0);
 }
 
-void	ft_is_prime_test()
+/*void	ft_is_prime_test()
 {
 	int res;
 	int counter;
-	int primes[17] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59};
+	int primes[17] = {2, 3, 5, 7, 11, 13, 17, 
+	19, 23, 29, 31, 37, 41, 43, 47, 53, 59};
 
 	counter = 0;
 	while (counter < 17)
@@ -45,7 +46,8 @@ void	ft_is_prime_test()
 		res = ft_is_prime(primes[counter]);
 		if (res != 1)
 		{
-			printf("[1] KO, %d is a prime number! returned: %d.\n", primes[counter], res);
+			printf("[1] KO, %d is a prime number! 
+			returned: %d.\n", primes[counter], res);
 			return ;
 		}
 		counter++;
@@ -57,7 +59,8 @@ void	ft_is_prime_error_test()
 {
 	int res;
 	int counter;
-	int non_primes[17] = {-1, 0, 1, 4, 8, 10, 12, 15, 18, 20, 28, 30, 36, 40, 42, 48, 54};
+	int non_primes[17] = {-1, 0, 1, 4, 8, 
+	10, 12, 15, 18, 20, 28, 30, 36, 40, 42, 48, 54};
 
 	counter = 0;
 	while (counter < 17)
@@ -65,7 +68,8 @@ void	ft_is_prime_error_test()
 		res = ft_is_prime(non_primes[counter]);
 		if (res == 1)
 		{
-			printf("[2] KO, %d is not a prime number! returned: %d\n", non_primes[counter], res);
+			printf("[2] KO, %d is not a prime number! 
+			returned: %d\n", non_primes[counter], res);
 			return ;
 		}
 		counter++;
@@ -80,4 +84,4 @@ int		main(void)
 	printf("[2] Testing non-prime numbers up to 54.\n");
 	ft_is_prime_error_test();
 	return (0);
-}
+}*/

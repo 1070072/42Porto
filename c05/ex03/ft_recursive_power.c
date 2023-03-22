@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:37:08 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/22 14:50:28 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/22 16:06:36 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_recursive_power(int nb, int power)
 		return (nb * (ft_recursive_power(nb, (power - 1))));
 }
 
-void	ft_recursive_power_test(int nb, int power)
+/*void	ft_recursive_power_test(int nb, int power)
 {
 	int res;
 
@@ -82,4 +82,4 @@ int	main(void)
 	else
 		printf("OK, time: %li seconds\n", time_bef);
 	return (0);
-}
+}*/
