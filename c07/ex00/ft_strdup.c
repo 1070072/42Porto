@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:33:35 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/23 09:30:25 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/23 10:31:35 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ char	*ft_strcpy(char *dest, char *src)
 	
 	i = 0;
 	while (src[i] != '\0')
+	{
 		dest[i] = src[i];
+		i++;
+	}
 	dest[i] = '\0';
 	return (dest);	
 }
@@ -30,7 +33,7 @@ int	ft_strlen(char *src)
 	int i;
 	
 	i = 0;
-	while (src)
+	while (src[i] != '\0')
 		i++;
 	return (i);	
 }
@@ -58,4 +61,3 @@ int	main(void)
 	printf("original:%s\ncopia:%s\n", str, ft_strdup(str));	
 	return (0);
 }
-
