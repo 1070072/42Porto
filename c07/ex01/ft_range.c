@@ -6,7 +6,27 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:01 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/23 08:34:02 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/23 11:55:16 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	*ft_range(int min, int max)
+{
+	
+
+	
+}
+
+int	main(void)
+{
+	int min;
+	int max;
+
+	min = -10;
+	max = 10;
+	
+	ft_range(min, max);
+	
+	
+	
+}
