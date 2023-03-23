@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:33:35 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/23 10:39:54 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/23 14:50:19 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strdup(char *src)
 {
 	char *tmp;
 
-	tmp = (char*)malloc(ft_strlen(src) + 1);
+	tmp = malloc(ft_strlen(src) + 1);
 	if (tmp != NULL)
 	{
 		ft_strcpy(tmp, src);
