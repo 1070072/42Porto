@@ -3,40 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 09:13:51 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 12:38:42 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/25 14:36:12 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 int	ft_strcmp(char *str1, char *str2)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while((str1[i] == str2[i]) && str1['\0'])
+	while ((str1[i] == str2[i]) && str1['\0'])
 	{
-		i++;		
+		i++;
 	}
-	return((unsigned char) str1[i] - (unsigned char) str2[i]);
+	return ((unsigned char) str1[i] - (unsigned char) str2[i]);
 }
 
-char **ft_argvswap(int argc, char **argv)
+char	**ft_argvswap(int argc, char **argv)
 {
-	int i;
-	int j;
-	char *temp;
-	
-	i = 0;
-	j = argc;
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 1;
+	j = 1;
 	while (j < argc - 1)
 	{
-		i = 0;
+		i = 1;
 		while (i < argc - 1)
 		{
 			temp = argv[i];
@@ -54,14 +52,12 @@ char **ft_argvswap(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int i;
-	int j;
-	int count;
+	int	i;
+	int	j;
 
-	count = argc;
 	if (argc == 1)
 		return (0);
-	else 
+	else
 	{
 		ft_argvswap(argc, argv);
 		j = 1;
