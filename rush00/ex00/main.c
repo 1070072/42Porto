@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 09:03:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 10:58:56 by jf               ###   ########.fr       */
+/*   Created: 2023/03/11 11:27:03 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/16 14:49:36 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
-{
-	int	i;
-	int	j;
+char	rush03(int x, int y);
 
-	i = 0;
-	j = argc - 1;
-	while (j >= 1)
-	{
-		while (argv[j][i] != '\0')
-		{
-			write(1, &argv[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		write(1, &j, 1);
-		j--;
-	}
+int	main(void)
+{
+	rush03(5, 6);
 	return (0);
 }

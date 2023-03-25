@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 09:03:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 10:58:56 by jf               ###   ########.fr       */
+/*   Created: 2023/03/09 11:03:24 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/13 11:49:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+void	ft_print_reverse_alphabet(void)
 {
-	int	i;
-	int	j;
+	char	let;
 
-	i = 0;
-	j = argc - 1;
-	while (j >= 1)
+	let = 122;
+	while (let > 96)
 	{
-		while (argv[j][i] != '\0')
-		{
-			write(1, &argv[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		write(1, &j, 1);
-		j--;
+		write(1, &let, 1);
+		let--;
 	}
-	return (0);
 }

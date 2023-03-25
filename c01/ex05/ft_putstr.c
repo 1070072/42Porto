@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 09:03:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 10:58:56 by jf               ###   ########.fr       */
+/*   Created: 2023/03/12 19:27:44 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/14 14:26:32 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = argc - 1;
-	while (j >= 1)
+	while (str[i] != '\0')
 	{
-		while (argv[j][i] != '\0')
-		{
-			write(1, &argv[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		write(1, &j, 1);
-		j--;
+		write(1, &str[i], 1);
+		i++;
 	}
+}
+
+/*
+int	main(void)
+{
+	char *str = "hello 42\n";
+
+	ft_putstr(str);
 	return (0);
 }
+*/

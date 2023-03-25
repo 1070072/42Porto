@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 09:03:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 10:58:56 by jf               ###   ########.fr       */
+/*   Created: 2023/03/13 12:28:23 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/17 10:51:53 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int	ft_strlen(char *str)
 {
-	int	i;
-	int	j;
+	int		i;
 
 	i = 0;
-	j = argc - 1;
-	while (j >= 1)
+	while (str[i] != '\0')
 	{
-		while (argv[j][i] != '\0')
-		{
-			write(1, &argv[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		write(1, &j, 1);
-		j--;
+		i++;
 	}
+	return (i);
+}
+
+/*
+int	main(void)
+{
+	char *str = "yes";
+	int size;
+
+	size = ft_strlen(str);
+	printf("%i\n", size);
 	return (0);
 }
+*/

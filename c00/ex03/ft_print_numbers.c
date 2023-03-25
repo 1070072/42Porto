@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 09:03:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 10:58:56 by jf               ###   ########.fr       */
+/*   Created: 2023/03/09 11:16:33 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/13 11:49:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+void	ft_print_numbers(void)
 {
-	int	i;
-	int	j;
+	char	num;
 
-	i = 0;
-	j = argc - 1;
-	while (j >= 1)
+	num = 48;
+	while (num < 58)
 	{
-		while (argv[j][i] != '\0')
-		{
-			write(1, &argv[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		i = 0;
-		write(1, &j, 1);
-		j--;
+		write(1, &num, 1);
+		num++;
 	}
-	return (0);
 }
