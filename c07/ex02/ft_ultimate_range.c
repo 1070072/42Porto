@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/23 15:58:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:00:11 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ int	ft_ultimate_range(int **range, int min, int max)
 		size = size * -1;
 	}
 	array = malloc(size * 4);
-	if (array == NULL)
-		return (-1);
-	else
-	{
+	if (array != NULL)
+	{	
 		while (++i <= size)
 			array[i] = min + i;	
 		*range = array;
 		return (i);
+	}
+	else
+	{
+		return (0);
 	}
 }
 
@@ -61,20 +63,17 @@ int	main(void)
 	int *arr1;
 	int *arr2;
 	int *arr3;
-	int *arr4;
 	int *arr5;
 	int *arr6;
 	int size1;
 	int size2;
 	int size3;
-	int size4;
 	int size5;
 	int size6;
 
 	size1 = ft_ultimate_range(&arr1, 1, 2);
 	size2 = ft_ultimate_range(&arr2, -1, 2);
 	size3 = ft_ultimate_range(&arr3, -3, -1);
-	size4 = ft_ultimate_range(&arr4, -2, -3);
 	size5 = ft_ultimate_range(&arr5, 0, 10);
 	size6 = ft_ultimate_range(&arr6, -2, 0);
 
