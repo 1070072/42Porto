@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 12:29:24 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/26 15:50:48 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,13 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
+	if (str[0] == '\0')
+		i = 0;
+	else
+	{
+		while (str[i] != '\0')
+			i++;
+	}
 	return (i);
 }
 
@@ -36,27 +41,43 @@ char *ft_strcat(char *dest, char *src)
 		dest[l + i] = src[i];
 		i++;		
 	}
-	dest[l] = '\0';
 	return (dest);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	//int l_sep;
+	char *str_final;
+	int l_sep;
+	int l_strs;
+	int l_total;
 	int i;
-	int j;
 
 	i = 0;
-	//l_sep = strlen(sep);
-	while(strs[i] != '\0')
+	l_total = 0;
+	l_strs = 0;
+	l_sep = strlen(sep) * (size - 1);
+	while(i < size)
 	{
-		j = 0;
-		while(strs[i][j] != '\0')
-			j++;
+		l_strs = l_strs + ft_strlen(strs[i]);
 		i++;
 	}
-	printf("%i", i);
-	printf("%i", j);
+	l_total = l_sep + l_strs + 1;
+	if (size == 0)
+		str_final = malloc(1);
+	else
+	{	
+		i = 0;
+		str_final = malloc(l_total);
+		while(i < size)
+		{
+			str_final = ft_strcat(str_final, strs[i]);
+			if (i < (size - 1))
+			str_final = ft_strcat(str_final, sep);
+			i++;
+		}
+		str_final[ft_strlen(str_final) + 1] = '\0';
+	}
+	return (str_final);
 }
 
 int		main(void)
