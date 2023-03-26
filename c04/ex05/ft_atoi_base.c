@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 19:17:37 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:00:20 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@ int	ft_pos(char *str, char *base, int i)
 	int v;
 	
 	j = -1;
+	v = 0;
 	while (base[++j] != '\0')
 	{
 		if (str[i] == base[j])
-			return (j);
+		{
+			v = j;
+			break;
+		}
 		else
-			return (-1);
+		v = -1;
 	}
+	return (v);
 }
 
 int	ft_recursive_power(int nb, int power)
@@ -51,29 +56,30 @@ int ft_strlen(char *str)
 int	ft_atoi_base(char *str, char *base)
 {
 	int i;
+	int j;
 	int sign;
 	int l_base;
 	int l_nbr;
 	int nb;
 	
 	i = 0;
+	nb = 0;
 	sign = 1;
+	l_base = ft_strlen(base);
+	l_nbr = ft_strlen(str);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
-		sign = sign * -1;
-	l_base = ft_strlen(base);
-	l_nbr = ft_strlen(str);
-	nb = 0;
-	i = -1;
-	while (++i < l_nbr)
-		nb = nb + ft_pos(str, base, (l_nbr - 1 - i)) * ft_recursive_power(l_base, i);
+			sign = sign * -1;
+	j = -1;
+	while (++j < (l_nbr - i))
+		nb = nb + ft_pos(str, base, (l_nbr - 1 - j)) * ft_recursive_power(l_base, j);
 	return (nb * sign);
 }
 
 int	main(void)
 {
-	printf("%i", ft_atoi_base("101111", "01"));
+	printf("%i", ft_atoi_base("    +--28a", "0123456789abcdef"));
 	return (0);
 }
