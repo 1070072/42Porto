@@ -1,63 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 08:33:35 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/23 14:50:19 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/26 09:56:30 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/26 10:32:08 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+
+int	ft_strlen(char *str)
+{
+	int i;
+	
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
 
 char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
-	
+
 	i = 0;
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
-	}
+	}	
 	dest[i] = '\0';
 	return (dest);	
 }
 
-int	ft_strlen(char *src)
-{
-	int i;
-	
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);	
-}
 
 char	*ft_strdup(char *src)
-{
-	char *tmp;
-
-	tmp = malloc(ft_strlen(src) + 1);
-	if (tmp != NULL)
+{	
+	char *temp;
+	
+	temp = malloc(ft_strlen(src) + 1);
+	if (temp != NULL)
 	{
-		ft_strcpy(tmp, src);
-		return (tmp);
+		ft_strcpy(temp, src);
+		return(temp);
 	}
 	else
-	return(NULL);
+	return (NULL);
 }
 
 int	main(void)
 {
-	//char *str;
+	char str1[] = "Ola 42!";
+	 
+	printf("Original: %s\n", str1);
+	printf("Duplicado: %s\n", ft_strdup(str1));
 	
-	char str[] = "Ola 42!";
-
-	printf("original:%s\ncopia:%s\n", str, ft_strdup(str));	
-	return (0);
 }

@@ -5,43 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 08:34:01 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/25 14:59:53 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/26 10:33:44 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/26 11:33:39 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int	*ft_range(int min, int max)
 {
 	int size;
-	int	*range;
+	int *array;
 	int i;
-	
-	i = -1;
-	size = max - min;
+
+	i = 0;
 	if (min >= max)
 	return (NULL);
-	range = malloc(size * 4);
-	while (++i <= size)
-		range[i] = min + i;	
-	return (range);
+	size = max - min;
+	array = malloc(4 * size);
+	if (array != NULL)
+		while (i < size)
+		{
+			array[i] = min + i;
+			i++;
+		}
+	else
+		return (NULL);
+	return (array);
 }
 
 int	main(void)
 {
-	int min;
 	int max;
-	int *r;
+	int min;
 	int i;
-	
-	i = -1;	
-	min = -10;
+	int *array;
+
+	i = -1;
+	min = -10; 
 	max = 10;
-		
-	r = ft_range(min, max);	
-	while (r[++i] < max)
-	printf("%d ", r[i]);
+	array = ft_range(min, max);
+	while (++i < 20)
+	{
+		printf("%d ", array[i]);
+	}
 	printf("\n");
 }
