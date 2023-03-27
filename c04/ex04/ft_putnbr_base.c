@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:01:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 19:19:27 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:15:57 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int	ft_check_base(char *base)
 	i = -1;
 	while (base[++i] != '\0')
 	{
-		if (base[i] == '\0' || base[i] == '+' || base[i] == '-' || base[i] == base [i + 1] || ft_strlen(base) <= 1)
+		if (base[i] == '\0' || base[i] == '+'
+			|| base[i] == '-' || base[i] == base [i + 1]
+			|| ft_strlen(base) <= 1)
 			return (0);
 		else
 			return (1);
@@ -66,14 +68,14 @@ void	ft_putnbr_base(int nbr, char *base)
 	write(1, &l, 1);
 }		
 
-int		main(void)
+/*int		main(void)
 {
 	// base binaria
 	printf("Bases binarias, n = 47. \"01\" e \"\\/\"\n");
 	ft_putnbr_base(47, "01");
 	ft_putchar('\n');
 	printf("Esperado: 101111\n");
-	/*ft_putnbr_base(47, "\\/");
+	ft_putnbr_base(47, "\\/");
 	ft_putchar('\n');
 	printf("Esperado: /\\////\n");
 	// base 10
@@ -83,18 +85,18 @@ int		main(void)
 	printf("Esperado: -2147483648\n");
 	ft_putnbr_base(INT_MIN, ",.;\\][{}@#");
 	ft_putchar('\n');
-	printf("Esperado: -;.]}]@\\{]@\n");*/
+	printf("Esperado: -;.]}]@\\{]@\n");
 	// base 16
-	printf("Bases 16, n = 650. \"0123456789abcdef\" e \"jdlskmnMKZxVuzfa\"\n");
-	ft_putnbr_base(650, "0123456789abcdef");
+	printf("Bases 16, n = -65040. \"0123456789ABCDEF\" e \"jdlskmnMKZxVuzfa\"\n");
+	ft_putnbr_base(-65040, "0123456789ABCDEF");
 	ft_putchar('\n');
-	/*printf("Esperado: -FE10\n");
+	printf("Esperado: -FE10\n");
 	ft_putnbr_base(-65040, "jdlskmnMKZxVuzfa");
 	ft_putchar('\n');
 	printf("Esperado: -afdj\n");
 	// base 0 e base 1, nao pode aparecer nada
 	printf("Bases 0 e 1, nao deve aparecer nada, n = 256.\n");
 	ft_putnbr_base(-29092, "0");
-	ft_putnbr_base(-29092, "");*/
+	ft_putnbr_base(-29092, "");
 	return (0);
-}
+}*/
