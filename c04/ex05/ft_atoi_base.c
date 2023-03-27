@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 15:10:23 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:08:43 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,10 @@ int	ft_check_base(char *base)
 			k++;
 		}
 	}
+	i = -1;
 	while (base[++i] != '\0')
 	{
-		if (base[i] == '\0' || base[i] == '+'
+		if (base[i] == "" || base[i] == '+'
 			|| base[i] == '-'
 			|| ft_sl(base) <= 1)
 			return (0);
@@ -108,6 +109,6 @@ int	ft_atoi_base(char *str, char *base)
 
 /*int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--28a", "0123456789abcdef"));
+	printf("%i", ft_atoi_base("    +--z", "z123456789abcdef"));
 	return (0);
 }*/

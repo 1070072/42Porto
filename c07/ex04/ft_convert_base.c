@@ -1,26 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_base.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 17:02:29 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 17:19:53 by jrocha-v         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 08:35:04 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 17:02:04 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/27 18:09:51 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -51,9 +40,10 @@ int	ft_check_base(char *base)
 			k++;
 		}
 	}
+	i = -1;
 	while (base[++i] != '\0')
 	{
-		if (base[i] == '\0' || base[i] == '+'
+		if (base[i] == "" || base[i] == '+'
 			|| base[i] == '-'
 			|| ft_sl(base) <= 1)
 			return (0);
@@ -95,9 +85,9 @@ int	ft_rp(int nb, int power)
 
 char *ft_convert(int nb, char *base, char *l_out)
 {
-	int		n;
-	int		j;
-	static int		k;
+	unsigned int			n;
+	unsigned int			j;
+	static unsigned int		k;
 
 	j = ft_sl(base);
 	if (nb < 0)
@@ -107,13 +97,13 @@ char *ft_convert(int nb, char *base, char *l_out)
 		l_out[0] = '-';
 	}
 	else
-	{	
 		n = nb;
-		k = -1;
-	}
 	if (n >= j)
 		ft_convert((n / j), base, l_out);
+	if (l_out[0] == '-' && k <= 0)
+		k = 0;
 	l_out[++k] = base[n % j];
+	l_out[k + 1] = '\0';
 	return (l_out);
 }
 
@@ -142,8 +132,23 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (ft_convert(n_conv1, base_to, l_out));
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%s", ft_convert_base("    +--28a", "0123456789abcdef", "0123456789"));
+	return (0);
+}*/
+
+int		main(void)
+{
+	char nbr[] = "-+--2147483647";
+	char base_to[] = "0123456789ABCDEF";
+	char base_from[] = "0123456789";
+	char *res;
+
+	res = ft_convert_base(nbr, base_from, base_to);
+	if (res == NULL)
+		return (1);
+	printf("%s\n", res);
+	free(res);
 	return (0);
 }

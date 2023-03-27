@@ -6,12 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:01:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 15:09:55 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:08:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <limits.h>
 #include <stdio.h>
 
 void	ft_putchar(char c)
@@ -46,19 +45,30 @@ int	ft_sl(char *base)
 int	ft_check_base(char *base)
 {
 	int	i;
-	int	v;
+	int	k;
 
 	i = -1;
 	while (base[++i] != '\0')
 	{
-		if (base[i] == '\0' || base[i] == '+'
-			|| base[i] == '-' || (ft_ch_db(base, base[i], i)) == 0
+		k = 0;
+		while (k < i)
+		{
+			if (base[k] == base[i])
+				return (0);
+			k++;
+		}
+	}
+	i = -1;
+	while (base[++i] != '\0')
+	{
+		if (base[i] == "" || base[i] == '+'
+			|| base[i] == '-'
 			|| ft_sl(base) <= 1)
 			return (0);
 		else
-			v = 1;
+			return (1);
 	}
-	return (v);
+	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
@@ -85,7 +95,6 @@ void	ft_putnbr_base(int nbr, char *base)
 
 /*int	main(void)
 {
-	ft_putnbr_base(-650, "0123456789abcdef");
-	
+	ft_putnbr_base(0, "0123456789abcdef");
 	return (0);
 }*/
