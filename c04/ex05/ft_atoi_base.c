@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 18:08:43 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:18:13 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_check_base(char *base)
 	i = -1;
 	while (base[++i] != '\0')
 	{
-		if (base[i] == "" || base[i] == '+'
+		if (base[i] == '\0' || base[i] == '+'
 			|| base[i] == '-'
 			|| ft_sl(base) <= 1)
 			return (0);
@@ -101,6 +101,8 @@ int	ft_atoi_base(char *str, char *base)
 	while (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			sign = sign * -1;
+	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		return (0);
 	j = -1;
 	while (++j < (ft_sl(str) - i))
 		n = n + ft_ps(str, base, (ft_sl(str) - 1 - j)) * ft_rp(l_base, j);
@@ -109,6 +111,6 @@ int	ft_atoi_base(char *str, char *base)
 
 /*int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--z", "z123456789abcdef"));
+	printf("%i", ft_atoi_base("    +--0", "0123456789abcdef"));
 	return (0);
 }*/
