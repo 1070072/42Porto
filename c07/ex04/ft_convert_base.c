@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:35:04 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 12:06:49 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:10:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (ft_convert(n_conv1, base_to, c));
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%s", ft_convert_base("    +--256776564", "01234567", "0123456789abcdef"));
 	
 	return (0);
-}
+}*/
