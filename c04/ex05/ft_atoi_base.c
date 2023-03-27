@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 21:00:20 by jf               ###   ########.fr       */
+/*   Updated: 2023/03/27 08:53:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ int	ft_atoi_base(char *str, char *base)
 
 int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--28a", "0123456789abcdef"));
+	printf("%i", ft_atoi_base("    +--256776564", "01234567"));
 	return (0);
 }
