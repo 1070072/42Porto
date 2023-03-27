@@ -1,12 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   convert_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/27 17:02:29 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/03/27 17:19:53 by jrocha-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:35:04 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 15:40:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:02:04 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,23 +97,22 @@ char *ft_convert(int nb, char *base, char *l_out)
 {
 	int		n;
 	int		j;
-	int		k;
+	static int		k;
 
 	j = ft_sl(base);
 	if (nb < 0)
 	{
 		k = 0;
 		n = -nb;
+		l_out[0] = '-';
 	}
 	else
-	{
+	{	
 		n = nb;
 		k = -1;
 	}
 	if (n >= j)
 		ft_convert((n / j), base, l_out);
-	if (k == 0)
-		l_out[0] = '-';
 	l_out[++k] = base[n % j];
 	return (l_out);
 }
@@ -133,6 +144,6 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 int	main(void)
 {
-	printf("%s", ft_convert_base("    +--1212", "01234567", "0123456789abcdef"));
+	printf("%s", ft_convert_base("    +--28a", "0123456789abcdef", "0123456789"));
 	return (0);
 }
