@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 15:02:12 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:05:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,8 @@ int	ft_atoi_base(char *str, char *base)
 	return (n * sign);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--112111", "01"));
+	printf("%i", ft_atoi_base("    +--28akjkj24", "0123456789abcdef"));
 	return (0);
-}
+}*/
