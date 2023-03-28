@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:01:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 09:35:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:02:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,6 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(0, "0");
+	ft_putnbr_base(100, "01234567891abcdef");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 15:02:12 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:38:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,34 @@ int	ft_sl(char *str)
 	return (i);
 }
 
-int	ft_convert(char c, char *base)
+int	ft_rp(int nb, int power)
 {
-	int		i;
-
-	i = 0;
-	while (base[i])
-	{
-		if (base[i] == c)
-		{
-			return (i);
-		}
-		i++;
-	}
-	return (i);
+	if (power < 0)
+		return (0);
+	else if (power == 0)
+		return (1);
+	else
+		return (nb * (ft_rp(nb, (power - 1))));
 }
 
-int	ft_number_in_base(char c, char *base)
+int	ft_ps(char *str, char *base, int i)
 {
-	int	i;
+	int	j;
+	int	v;
 
-	i = 0;
-	while (base[i] != c && base[i])
-		i++;
-	if (base[i] == c)
-		return (1);
-	return (0);
+	j = -1;
+	v = 0;
+	while (base[++j] != '\0')
+	{
+		if (str[i] == base[j])
+		{
+			v = j;
+			return (1) ;
+		}
+		else
+		v = 0;
+	}
+	return (v);
 }
 
 int	ft_check_base(char *base)
@@ -83,6 +85,7 @@ int	ft_check_base(char *base)
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
+	int	j;
 	int	sign;
 	int	l_base;
 	int	n;
@@ -100,17 +103,14 @@ int	ft_atoi_base(char *str, char *base)
 			sign = sign * -1;
 	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		return (0);
-	while (str[i] && ft_number_in_base(str[i], base))
-	{
-		n = n * l_base;
-		n = n + ft_convert(str[i], base);
-		i++;
-	}
+	j = -1;
+	while (++j < (ft_sl(str) - i))
+		n = n + ft_ps(str, base, (ft_sl(str) - 1 - j)) * ft_rp(l_base, j);
 	return (n * sign);
 }
 
 int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--112111", "01"));
+	printf("%i", ft_atoi_base("    +--11111", "01"));
 	return (0);
 }
