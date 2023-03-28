@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 11:55:50 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:35:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int size;
+	int	size;
 	int	*array;
-	int i;
+	int	i;
 
 	i = 0;
 	if (min >= max)
@@ -41,7 +41,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (-1);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int min;
 	int max;
@@ -61,4 +61,4 @@ int	main(void)
 	printf("Size: ");
 	printf("%d ", size);
 	printf("\n");
-}
+}*/

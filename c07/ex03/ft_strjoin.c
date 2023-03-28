@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/26 17:09:38 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:38:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int l;
+	int	i;
+	int	l;
 
 	i = 0;
 	l = ft_strlen(dest);
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[l + i] = src[i];
 		i++;		
@@ -46,10 +46,10 @@ char *ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char *str_final;
-	int l_strs;
-	int l_total;
-	int i;
+	char	*str_final;
+	int		l_strs;
+	int		l_total;
+	int		i;
 
 	i = -1;
 	while(++i < size)

@@ -153,5 +153,5 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 int main (void)
 {
-	ft_convert_base("    ++--+ 650", "0123456789", "0123456789abcdef");
+	ft_convert_base("    ++--+650", "0123456789", "0123456789abcdef");
 }

@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 15:25:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:39:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,43 +52,41 @@ int	ft_check_base(char *base)
 	return (1);
 }
 
-int	ft_pos(char *str, char *base, int i)
+int	ft_convert(char c, char *base)
 {
-	int j;
-	int v;
-	
-	j = -1;
-	v = 0;
-	while (base[++j] != '\0')
+	int	i;
+
+	i = 0;
+	while (base[i])
 	{
-		if (str[i] == base[j])
+		if (base[i] == c)
 		{
-			v = j;
-			break;
+			return (i);
 		}
-		else
-		v = -1;
+		i++;
 	}
-	return (v);
+	return (i);
 }
 
-int	ft_rp(int nb, int power)
+int	ft_number_in_base(char c, char *base)
 {
-	if (power < 0)
-		return (0);
-	else if (power == 0)
+	int	i;
+
+	i = 0;
+	while (base[i] != c && base[i])
+		i++;
+	if (base[i] == c)
 		return (1);
-	else
-		return (nb * (ft_rp(nb, (power - 1))));
+	return (0);
 }
 
-char *ft_convert(int nb, char *base, char *l_out)
+char *ft_convert_to(int nb, char *base_to, char *l_out)
 {
-	unsigned int			n;
+	long	n;
 	unsigned int			j;
 	static unsigned int		k;
 
-	j = ft_sl(base);
+	j = ft_sl(base_to);
 	if (nb < 0)
 	{
 		k = 0;
@@ -98,10 +96,10 @@ char *ft_convert(int nb, char *base, char *l_out)
 	else
 		n = nb;
 	if (n >= j)
-		ft_convert((n / j), base, l_out);
+		ft_convert_to((n / j), base_to, l_out);
 	if (l_out[0] == '-' && k <= 0)
 		k = 0;
-	l_out[++k] = base[n % j];
+	l_out[++k] = base_to[n % j];
 	l_out[k + 1] = '\0';
 	return (l_out);
 }
@@ -110,12 +108,12 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	char	*l_out;
 	int 	i;
-	int 	j;
 	int 	sign;
-	int 	n_conv1;
+	long 	n_cv;
 
 	i = 0;
 	sign = 1;
+	n_cv = 0;
 	l_out = malloc(40);
 	if (ft_check_base(base_from) == 0 || ft_check_base(base_to) == 0)
 		return (NULL);
@@ -124,11 +122,15 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	while (nbr[i] == '+' || nbr [i] == '-')
 		if (nbr[i++] == '-')
 			sign = sign * -1;
-	j = -1;
-	while (++j < (ft_sl(nbr) - i))
-		n_conv1 = n_conv1 + ft_pos(nbr, base_from, (ft_sl(nbr) - 1 - j)) * ft_rp(ft_sl(base_from), j);
-	n_conv1 = sign * n_conv1;
-	return (ft_convert(n_conv1, base_to, l_out));
+	if ((nbr[i] >= 9 && nbr[i] <= 13) || nbr[i] == 32)
+		return (0);
+	while (nbr[i] && ft_number_in_base(nbr[i], base_from))
+	{
+		n_cv = n_cv * ft_sl(base_from);
+		n_cv = n_cv + ft_convert(nbr[i], base_from);
+		i++;
+	}
+	return (ft_convert_to((n_cv * sign), base_to, l_out));
 }
 
 /*int	main(void)
@@ -139,9 +141,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 int		main(void)
 {
-	char nbr[] = "-+--650";
-	char base_to[] = "0123456789ABCDEF";
-	char base_from[] = "0123456789";
+	char nbr[] = "-+--11112111";
+	char base_to[] = "0123456789abcdef";
+	char base_from[] = "01";
 	char *res;
 
 	res = ft_convert_base(nbr, base_from, base_to);
