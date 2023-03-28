@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:01:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 18:17:28 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 09:35:17 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_ch_db(char *base, char b, int pos)
 
 int	ft_sl(char *base)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (base[i] != '\0')
@@ -73,28 +73,29 @@ int	ft_check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	unsigned char	l;
-	unsigned int	n;
-	unsigned int	j;
+	long	n;
+	int		length;
 
-	j = ft_sl(base);
+	length = ft_sl(base);
+	n = nbr;
 	if (ft_check_base(base) == 0)
 		return ;
-	if (nbr < 0)
+	if (n < 0)
 	{
+		n = n * -1;
 		ft_putchar ('-');
-		n = -nbr;
 	}
-	else
-	n = nbr;
-	if (n >= j)
-		ft_putnbr_base((n / j), base);
-	l = base[n % j];
-	write(1, &l, 1);
+	if (n < length)
+		ft_putchar(base[n]);
+	if (n >= length)
+	{
+		ft_putnbr_base((n / length), base);
+		ft_putnbr_base((n % length), base);
+	}
 }
 
-/*int	main(void)
+int	main(void)
 {
-	ft_putnbr_base(650, "0123456789abcdef");
+	ft_putnbr_base(0, "0");
 	return (0);
-}*/
+}

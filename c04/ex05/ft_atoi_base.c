@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/27 18:18:13 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:23:05 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_ps(char *str, char *base, int i)
 			break ;
 		}
 		else
-		v = -1;
+		v = 0;
 	}
 	return (v);
 }
@@ -109,8 +109,8 @@ int	ft_atoi_base(char *str, char *base)
 	return (n * sign);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--0", "0123456789abcdef"));
+	printf("%i", ft_atoi_base("    +--28a", "01"));
 	return (0);
-}*/
+}
