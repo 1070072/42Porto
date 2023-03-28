@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jf <jf@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 15:47:25 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:49:01 by jf               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ char *ft_convert_to(int nb, char *base_to, char *l_out)
 		k = 0;
 	l_out[++k] = base_to[n % j];
 	l_out[k + 1] = '\0';
+	if (l_out[0] == '\0')
+		l_out[0] = 0;
 	return (l_out);
 }
 
@@ -114,9 +116,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	i = 0;
 	sign = 1;
 	n_cv = 0;
-	l_out = malloc(40);
+	l_out = malloc(34);
 	if (ft_check_base(base_from) == 0 || ft_check_base(base_to) == 0)
-		return (NULL);
+		return (0);
 	while ((nbr[i] >= 9 && nbr[i] <= 13) || nbr[i] == 32)
 		i++;
 	while (nbr[i] == '+' || nbr [i] == '-')
@@ -135,7 +137,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 int		main(void)
 {
-	char nbr[] = "-+--l28a";
+	char nbr[] = "-+--j28ajk1";
 	char base_to[] = "0123456789";
 	char base_from[] = "0123456789abcdef";
 	char *res;
@@ -143,7 +145,7 @@ int		main(void)
 	res = ft_convert_base(nbr, base_from, base_to);
 	if (res == NULL)
 		return (1);
-	printf("%s\n", res);
+	printf("%s", res);
 	free(res);
 	return (0);
 }
