@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 15:47:25 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:39:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ft_number_in_base(char c, char *base)
 
 char *ft_convert_to(int nb, char *base_to, char *l_out)
 {
-	long					n;
+	long	n;
 	unsigned int			j;
 	static unsigned int		k;
 
@@ -133,11 +133,17 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (ft_convert_to((n_cv * sign), base_to, l_out));
 }
 
+/*int	main(void)
+{
+	printf("%s", ft_convert_base("    +--28a", "0123456789abcdef", "0123456789"));
+	return (0);
+}*/
+
 int		main(void)
 {
-	char nbr[] = "-+--l28a";
-	char base_to[] = "0123456789";
-	char base_from[] = "0123456789abcdef";
+	char nbr[] = "-+--11112111";
+	char base_to[] = "0123456789abcdef";
+	char base_from[] = "01";
 	char *res;
 
 	res = ft_convert_base(nbr, base_from, base_to);
