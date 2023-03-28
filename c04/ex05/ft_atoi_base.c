@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:03:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 10:23:05 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:39:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_ps(char *str, char *base, int i)
 		if (str[i] == base[j])
 		{
 			v = j;
-			break ;
+			return (1) ;
 		}
 		else
 		v = 0;
@@ -111,6 +111,6 @@ int	ft_atoi_base(char *str, char *base)
 
 int	main(void)
 {
-	printf("%i", ft_atoi_base("    +--28a", "01"));
+	printf("%i", ft_atoi_base("    +--11112", "01"));
 	return (0);
 }
