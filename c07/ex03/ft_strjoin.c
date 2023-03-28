@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 17:40:49 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:00:00 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str_final);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int		offset;
 	char	**strs;
@@ -94,4 +94,4 @@ int	main(void)
 	free(strs);
 	free(res_str);
 	return (0);
-}
+}*/
