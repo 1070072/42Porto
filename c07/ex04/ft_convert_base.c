@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 17:34:44 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:50:42 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_convert(char c, char *base)
 	return (i);
 }
 
-char *ft_convert_to(int nb, char *base_to, char *l_out)
+char	*ft_convert_to(int nb, char *base_to, char *l_out)
 {
 	long					n;
 	unsigned int			j;
@@ -65,9 +65,9 @@ char *ft_convert_to(int nb, char *base_to, char *l_out)
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	char	*l_out;
-	int 	i;
-	int 	sign;
-	long 	n_cv;
+	int		i;
+	int		sign;
+	long	n_cv;
 
 	i = 0;
 	sign = 1;
@@ -91,12 +91,12 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (ft_convert_to((n_cv * sign), base_to, l_out));
 }
 
-int		main(void)
+int	main(void)
 {
-	char nbr[] = "-+--650";
-	char base_to[] = "0123456789abcdef";
-	char base_from[] = "0123456789";
-	char *res;
+	char	nbr[] = "-+--650";
+	char	base_to[] = "0123456789abcdef";
+	char	base_from[] = "0123456789";
+	char	*res;
 
 	res = ft_convert_base(nbr, base_from, base_to);
 	if (res == NULL)

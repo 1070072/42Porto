@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 17:38:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:40:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strcat(char *dest, char *src)
 	while (src[i] != '\0')
 	{
 		dest[l + i] = src[i];
-		i++;		
+		i++;
 	}
 	return (dest);
 }
@@ -52,16 +52,16 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 
 	i = -1;
-	while(++i < size)
+	while (++i < size)
 		l_strs = l_strs + ft_strlen(strs[i]);
 	l_total = (strlen(sep) * (size - 1)) + l_strs + 1;
 	if (size == 0)
 		str_final = malloc(1);
 	else
-	{	
+	{
 		i = -1;
 		str_final = malloc(l_total);
-		while(++i < size)
+		while (++i < size)
 		{
 			str_final = ft_strcat(str_final, strs[i]);
 			if (i < (size - 1))
@@ -72,7 +72,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str_final);
 }
 
-int		main(void)
+int	main(void)
 {
 	int		offset;
 	char	**strs;

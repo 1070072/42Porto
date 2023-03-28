@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 17:35:41 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:58:14 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 	printf("%d ", r[i]);
 	printf("\n");
 	printf("Size: ");
-	printf("%d ", size);
+	printf("%d", size);
 	printf("\n");
 }*/
