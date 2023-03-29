@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:09:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/29 15:17:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:31:39 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 /*int	main(void)
 {
-	char	nbr[] = "483648";
+	char	nbr[] = "+-+-+ 454";
 	char	base_to[] = "0123456789abcdef";
 	char	base_from[] = "0123456789";
 	char	*res;
