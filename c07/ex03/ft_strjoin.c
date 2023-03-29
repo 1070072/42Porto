@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/29 10:26:28 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:24:26 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,31 +67,31 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			if (i < (size - 1))
 			str_final = ft_strcat(str_final, sep);
 		}
-		str_final[ft_strlen(str_final) + 1] = '\0';
+		str_final[ft_strlen(str_final)] = '\0';
 	}
 	return (str_final);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int		offset;
 	char	**strs;
 	char	*res_str;
 
-	strs = malloc(3 * sizeof(char *));
+	strs = malloc(10 * sizeof(char *));
 	if (strs == NULL)
 		return (1);
 	offset = 0;
-	while (offset < 3)
+	while (offset < 10)
 	{
-		strs[offset] = "abc";
+		strs[offset] = "abcgdfgsfg";
 		offset++;
 	}
-	res_str = ft_strjoin(3, strs, ", ");
+	res_str = ft_strjoin(10, strs, ", **45*5649486");
 	if (res_str == NULL)
 		return (1);
 	printf("res: %s\n", res_str);
 	free(strs);
 	free(res_str);
 	return (0);
-}
+}*/

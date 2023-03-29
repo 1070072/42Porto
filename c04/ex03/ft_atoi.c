@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:10:59 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/21 18:17:47 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:39:34 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	ft_atoi(char *str)
 	return (ret * sign);
 }
 
-/*int	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		printf("%i", ft_atoi(argv[1]));
 	else
 		return (0);
-}*/
+}
