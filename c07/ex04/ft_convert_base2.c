@@ -6,9 +6,12 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:33:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 17:51:05 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:11:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include <stdio.h>
 
 int	ft_sl(char *base)
 {

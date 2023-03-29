@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/28 18:00:00 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:26:28 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = -1;
 	while (++i < size)
 		l_strs = l_strs + ft_strlen(strs[i]);
-	l_total = (strlen(sep) * (size - 1)) + l_strs + 1;
+	l_total = (ft_strlen(sep) * (size - 1)) + l_strs + 1;
 	if (size == 0)
 		str_final = malloc(1);
 	else
@@ -72,7 +72,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str_final);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	int		offset;
 	char	**strs;
@@ -94,4 +94,4 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	free(strs);
 	free(res_str);
 	return (0);
-}*/
+}
