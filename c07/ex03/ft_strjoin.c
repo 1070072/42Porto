@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/29 17:41:11 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:51:46 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,8 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	if (str[0] == '\0')
-		i = 0;
-	else
-	{
-		while (str[i] != '\0')
-			i++;
-	}
+	while (str[i] != '\0')
+		i++;
 	return (i);
 }
 
