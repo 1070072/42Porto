@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:34:46 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/03/29 15:24:26 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:41:11 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,45 +29,59 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src, int *k)
 {
 	int	i;
-	int	l;
 
 	i = 0;
-	l = ft_strlen(dest);
 	while (src[i] != '\0')
 	{
-		dest[l + i] = src[i];
+		dest[*k] = src[i];
 		i++;
+		(*k)++;
 	}
 	return (dest);
+}
+
+int	ft_size_final(char **strs, char *sep, int size)
+{
+	int	i;
+	int	l_strs;
+	int	total;
+
+	i = -1;
+	l_strs = 0;
+	total = 0;
+	while (++i < size)
+		l_strs = l_strs + ft_strlen(strs[i]);
+	total = (ft_strlen(sep) * (size - 1)) + l_strs + 1;
+	return (total);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str_final;
-	int		l_strs;
 	int		l_total;
 	int		i;
+	int		k;
 
-	i = -1;
-	while (++i < size)
-		l_strs = l_strs + ft_strlen(strs[i]);
-	l_total = (ft_strlen(sep) * (size - 1)) + l_strs + 1;
+	k = 0;
+	l_total = ft_size_final(strs, sep, size);
 	if (size == 0)
-		str_final = malloc(1);
+		return (malloc(sizeof(char)));
 	else
 	{
 		i = -1;
 		str_final = malloc(l_total);
+		if (str_final == 0)
+			return (0);
 		while (++i < size)
 		{
-			str_final = ft_strcat(str_final, strs[i]);
+			str_final = ft_strcat(str_final, strs[i], &k);
 			if (i < (size - 1))
-			str_final = ft_strcat(str_final, sep);
+			str_final = ft_strcat(str_final, sep, &k);
 		}
-		str_final[ft_strlen(str_final)] = '\0';
+		str_final[k] = '\0';
 	}
 	return (str_final);
 }
@@ -90,7 +104,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	res_str = ft_strjoin(10, strs, ", **45*5649486");
 	if (res_str == NULL)
 		return (1);
-	printf("res: %s\n", res_str);
+	printf("%s\n", ft_strjoin(10, strs, ",  "));
 	free(strs);
 	free(res_str);
 	return (0);
