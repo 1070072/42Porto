@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:34:49 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/12 15:50:56 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:07:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (size == 0)
 		return(ft_strlen(src));

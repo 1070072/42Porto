@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/12 15:54:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:36:27 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
-int	ft_strncmp(const char *s1, const char *s2, size_t size);
+int		ft_strncmp(const char *s1, const char *s2, size_t size);
+char	*ft_strchr(const char *str, int c);
+
 
 #endif
