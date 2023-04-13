@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 19:22:37 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 19:34:12 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int		ft_memcmp(const void *b1, const void *b2, size_t len);
 void	ft_bzero(void *b, size_t len);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
