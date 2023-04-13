@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 10:02:36 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 10:01:51 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/13 10:25:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,23 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_atoi(const char *nstr)
+void	*ft_memset(void *dest, int c, size_t len)
 {
 	size_t	i;
-	int 	sign;
-	int 	nb;
-		
-	i = 0;
-	nb = 0;
-	sign = 1;
-	i = 0;
-	while ((nstr[i] >= 9 && nstr[i] <= 13) || nstr[i] == 32)
-		i++;
-	if (nstr[i] == '-' || nstr[i] == '+')
-	{
-		if (nstr[i] == '-') 
-			sign = sign * -1;
-		i++;
-	}
-	while (nstr[i] >= '0' && nstr[i] <= '9')
-		nb = nb * 10 + nstr[i++] - '0';
-	return (nb * sign);
+	unsigned char *str;
+	
+	str = (unsigned char *) dest;
+	i = -1;
+	while (++i < len)
+		str[i] = (unsigned char) c;
+	return (str);
 }
 
-int main(void)
+int	main(void)
 {
-	printf("%i\nstr", ft_atoi(" 	 2147483647"));
-	printf("%d\nstr", atoi(" 	 2147483647"));
+	char s1[] = "Ola 42 ola!";
+	char s2[] = "Ola 42 ola!";
+	
+	printf("%s | %s\n", ft_memset(s1, '$', 15), memset(s2, '*', 15));
+	printf("%s | %s\n", ft_memset(s1, '&', 3), memset(s2, '+', 3));
 }
