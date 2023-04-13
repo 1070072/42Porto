@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 10:01:51 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 16:34:26 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 16:13:56 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/13 17:04:38 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t len)
+void	*ft_calloc(size_t number, size_t size)
 {
-	size_t	i;
-
-	i = -1;
-	while (++i < len)
-		((unsigned char *)dest)[i] = (unsigned char) c;
-	return (dest);
+	void *ptr;
+	if (number == 0 || size == 0)
+		return (0);	
+	ptr = malloc(number * size);
+	ft_memset(ptr, 0, number * size);
+	return (ptr);	
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char s1[] = "Ola 42 ola!";
-	char s2[] = "Ola 42 ola!";
+	char *s1;
+	char *s2;
 	
-	printf("%s | %s\n", ft_memset(s1, '$', 15), memset(s2, '*', 15));
-	printf("%s | %s\n", ft_memset(s1, '&', 3), memset(s2, '+', 3));
-}*/
+	s1 = ft_calloc(5, sizeof(char));
+	strcpy(s1, "ola ");
+	s2 = calloc(5, sizeof(char));
+	strcpy(s2, "ola ");
+}

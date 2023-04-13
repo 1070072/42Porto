@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:13:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 15:53:14 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:44:07 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int	main(void)
 	char *s1 = "Ola 42 ola!";
 	char *s2 = "42";
 	
-	printf("%s | %s\n", ft_strnstr(s1, s2, 5));
-	printf("%s | %s\n", ft_strnstr(s1, s2, 4));
+	printf("%s\n", ft_strnstr(s1, s2, 5));
+	printf("%s\n", ft_strnstr(s1, s2, 3));
 }
