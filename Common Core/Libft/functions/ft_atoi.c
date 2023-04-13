@@ -6,15 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 10:02:36 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:13:42 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nstr)
 {
@@ -22,7 +18,6 @@ int	ft_atoi(const char *nstr)
 	int 	sign;
 	int 	nb;
 		
-	i = 0;
 	nb = 0;
 	sign = 1;
 	i = 0;

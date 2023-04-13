@@ -6,17 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:33:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/12 18:55:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:13:25 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {
