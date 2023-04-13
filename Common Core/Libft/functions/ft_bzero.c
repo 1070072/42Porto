@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 10:01:51 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 15:58:10 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 15:51:33 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/13 16:10:01 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t len)
+void	ft_bzero(void *b, size_t len)
 {
 	size_t	i;
-
-	i = -1;
-	while (++i < len)
-		((unsigned char *)dest)[i] = (unsigned char) c;
-	return (dest);
+	unsigned char *str;
+	
+	str = (unsigned char*)b;
+	i = 0;
+	while (i < len)
+	{
+		str[i] = '\0';
+		i++;
+	}
 }
 
 int	main(void)
 {
-	char s1[] = "Ola 42 ola!";
-	char s2[] = "Ola 42 ola!";
+	char s1[] = "Ola 42!";
+	char s2[] = "Ola 42!";
 	
-	printf("%s | %s\n", ft_memset(s1, '$', 15), memset(s2, '*', 15));
-	printf("%s | %s\n", ft_memset(s1, '&', 3), memset(s2, '+', 3));
+	ft_bzero(s1, 0);
+	bzero(s2, 0);
+	printf("%s\n", s1);
+	printf("%s\n", s2);
 }

@@ -6,15 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:33:11 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 12:31:58 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:11:25 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
