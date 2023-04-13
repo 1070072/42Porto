@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 16:50:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 19:32:08 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 19:15:37 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/13 19:19:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	long nb;
 
-	i = 0;
-	while (src[i] != '\0')
+	nb = n;
+	if (nb < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		nb = nb * -1;
+		ft_putchar_fd('-', fd);
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(const char *str)
-{
-	char *temp;
-
-	temp = malloc(ft_strlen(str) + 1);
-	if (temp != NULL)
+	if (n >= 10)
 	{
-		ft_strcpy(temp, str);
-		return (temp);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
 	else
-		return (NULL);
-}
-
-int	main(void)
-{
-	char	str1[] = "Ola 42!";
-
-	printf("Original: %s\n", str1);
-	printf("Duplicado: %s\n", ft_strdup(str1));
+		ft_putchar_fd(nb + '0', fd);	
 }
