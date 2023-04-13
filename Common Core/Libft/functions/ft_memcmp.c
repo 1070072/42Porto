@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 12:53:20 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 14:31:11 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 14:38:09 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/13 14:40:00 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+int	*ft_memcmp(const void *b1, const void *b2, size_t len)
 {
 	int i;
 	unsigned char *str;
@@ -31,6 +31,7 @@ void	*ft_memchr(const void *b, int c, size_t len)
 int	main(void)
 {
 	char *s1 = "Ola 42!";
+	char *s2 = "Ola 42!";
 	
 	printf("%s | %s\n", ft_memchr(s1, 'l', 2), memchr(s1, 'l', 2));
 	printf("%s | %s\n", ft_memchr(s1, 'a', 2), memchr(s1, 'a', 2));

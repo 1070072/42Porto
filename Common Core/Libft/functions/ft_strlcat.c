@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:35:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/12 17:07:01 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:27:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	lsrc;
 
 	ldest = ft_strlen(dest);
+	lsrc = ft_strlen(src);
 	if (size <= ldest)
 		return (lsrc + size);
 	while (src[i] && ((ldest + i) < (size - 1)))
