@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 13:13:42 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:42:40 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	ft_atoi(const char *nstr)
 
 int main(void)
 {
-	printf("%i\nstr", ft_atoi(" 	 2147483647"));
-	printf("%d\nstr", atoi(" 	 2147483647"));
+	printf("%i\n", ft_atoi(" 	 -2147483648"));
+	printf("%d\n", atoi(" 	 -2147483648"));
 }
