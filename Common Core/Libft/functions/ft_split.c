@@ -6,23 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/14 15:29:55 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:18:17 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// Delete function for final version
-size_t	ft_strlen(const char *s)
-{
-	size_t    i;
-
-	i = 0;
-	while(s[i])
-		i++;
-	return (i);
-}
-////////////////////////////////////
 
 static int	ft_cntwrds(char const *s, char c)
 {
@@ -49,7 +37,7 @@ static int	*ft_strposi(char const *s, char c, int words)
 	i = 0;
 	j = -1;
 	posi = malloc(sizeof(int) * (words * 2));
-	while (i < ft_strlen(s))
+	while (s[i])
 	{
 		posi[++j] = i;
 		while (s[i] != '\0' && s[i] != c)
@@ -95,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	words = ft_cntwrds(s, c);
 	posi = ft_strposi(s, c, words);
 	out = ft_substrings(s, words, posi);
-	if (!s)
+	if (!s || !out)
 		return (NULL);
 	return (out);
 }
