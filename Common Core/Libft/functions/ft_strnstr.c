@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:13:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 16:44:07 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/15 12:46:25 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (little[j] == '\0')
 		return ((char *)big);
-	while (big[i] != '\0' && i < len)
+	while (big[i] != '\0' && i < len - 1)
 	{
 		while (big[i + j] == little[j] && big[i + j] != '\0')
 			j++;
@@ -39,5 +39,7 @@ int	main(void)
 	char *s2 = "42";
 	
 	printf("%s\n", ft_strnstr(s1, s2, 5));
+	printf("%s\n", strnstr(s1, s2, 6));
 	printf("%s\n", ft_strnstr(s1, s2, 3));
+	printf("%s\n", strnstr(s1, s2, 3));
 }
