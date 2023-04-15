@@ -1,52 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 17:36:44 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/14 17:50:57 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/14 17:20:41 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:15:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	
+	char 	*substr;
+		
 	i = 0;
-	while(s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*join;
-	int		i;
-	int 	j;
-	
-	i = -1;
-	j = -1;
-	join = malloc((sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1)));
-	if (!join)
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
 		return (NULL);
-	while (s1[++i])
-		join[++j] = s1[i];
-	i = -1;
-	while (s2[++i])
-		join[++j] = s2[i];
-	join[j] = '\0';
-	return (join);
+	while (i < len)
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = '\0';
+	return (substr);
 }
 
-int main()
+/* int main()
 {
-    char *s1 = "Ola ";
-    char *s2 = "42!";
-    char *out = ft_strjoin(s1, s2);
+    char *s = "Ola 42 pisciners";
+	unsigned int start = 4;
+	size_t	len = 2; 
+
+    char *out = ft_substr(s, start, len);
 
 	printf("%s\n", out);
-}
+} */

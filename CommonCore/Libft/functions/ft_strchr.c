@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 17:20:41 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/14 17:39:10 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/12 17:24:10 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:13:01 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-	char 	*substr;
-		
+	int i;
+
 	i = 0;
-	substr = malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	while (i < len)
+	while (str[i])
 	{
-		substr[i] = s[start + i];
+		if (str[i] == c)
+			return ((char *)&str[i]);
 		i++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	if (str[i] == c)
+		return ((char *)&str[i]);
+	return (0);
 }
 
-int main()
+/* int	main(void)
 {
-    char *s = "Ola 42 pisciners";
-	unsigned int start = 4;
-	size_t	len = 2; 
+	char *s1 = "Ola 42!";
 
-    char *out = ft_substr(s, start, len);
-
-	printf("%s\n", out);
-}
+	printf("%p | %p\n", ft_strchr(s1, '\0'), strchr(s1, '\0'));
+	printf("%s | %s\n", ft_strchr(s1, 'a'), strchr(s1, 'a'));
+} */

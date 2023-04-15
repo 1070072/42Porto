@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/14 17:18:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:28:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char **ft_substrings(char const *s, int words, int *posi)
 		l++;
 		j = j + 2;
 	}
-	out[i] = '\0';
+	out[i] = NULL;
 	return (out);  
 }
 
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	return (out);
 }
 
-int main()
+/* int main()
 {
     char *s1 = "Ola 42";
     char c = ' ';
@@ -98,4 +98,4 @@ int main()
     i = -1;
     while (++i < 2)
         printf("%s\n", out[i]);
-}
+} */

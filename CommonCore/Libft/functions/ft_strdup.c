@@ -1,41 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/14 10:42:40 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 16:50:10 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:13:24 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nstr)
+static char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	i;
-	int 	sign;
-	int 	nb;
-		
-	nb = 0;
-	sign = 1;
+	int	i;
+
 	i = 0;
-	while ((nstr[i] >= 9 && nstr[i] <= 13) || nstr[i] == 32)
-		i++;
-	if (nstr[i] == '-' || nstr[i] == '+')
+	while (src[i] != '\0')
 	{
-		if (nstr[i] == '-') 
-			sign = sign * -1;
+		dest[i] = src[i];
 		i++;
 	}
-	while (nstr[i] >= '0' && nstr[i] <= '9')
-		nb = nb * 10 + nstr[i++] - '0';
-	return (nb * sign);
+	dest[i] = '\0';
+	return (dest);
 }
 
-int main(void)
+char	*ft_strdup(const char *str)
 {
-	printf("%i\n", ft_atoi(" 	 -2147483648"));
-	printf("%d\n", atoi(" 	 -2147483648"));
+	char *temp;
+
+	temp = malloc(ft_strlen(str) + 1);
+	if (temp != NULL)
+	{
+		ft_strcpy(temp, str);
+		return (temp);
+	}
+	else
+		return (NULL);
 }
+
+/* int	main(void)
+{
+	char	str1[] = "Ola 42!";
+
+	printf("Original: %s\n", str1);
+	printf("Duplicado: %s\n", ft_strdup(str1));
+} */

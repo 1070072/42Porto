@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 13:03:51 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 13:10:16 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 12:53:20 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:28:10 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*ft_memchr(const void *b, int c, size_t len)
 {
-	char	*out;
 	size_t	i;
-
-	if (!s || !f)
-		return (NULL);
-	out = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!out)
-		return (NULL);
+	unsigned char *str;
+	
+	str = (unsigned char*)b;
 	i = 0;
-	while (s[i])
+	while (i < len)
 	{
-		out[i] = f(i, s[i]);
+		if (((unsigned char *)str)[i] == c)
+			return ((void *)&str[i]);
 		i++;
 	}
-	out[i] = 0;
-	return (out);
+	return (0);
 }
 
+/* int	main(void)
+{
+	char *s1 = "Ola 42!";
+	
+	printf("%s | %s\n", ft_memchr(s1, 'l', 2), memchr(s1, 'l', 2));
+	printf("%s | %s\n", ft_memchr(s1, 'a', 2), memchr(s1, 'a', 2));
+} */

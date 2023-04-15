@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 16:50:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 19:32:08 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:08:38 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src)
+int	ft_atoi(const char *nstr)
 {
-	int	i;
-
+	size_t	i;
+	int 	sign;
+	int 	nb;
+		
+	nb = 0;
+	sign = 1;
 	i = 0;
-	while (src[i] != '\0')
+	while ((nstr[i] >= 9 && nstr[i] <= 13) || nstr[i] == 32)
+		i++;
+	if (nstr[i] == '-' || nstr[i] == '+')
 	{
-		dest[i] = src[i];
+		if (nstr[i] == '-') 
+			sign = sign * -1;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (nstr[i] >= '0' && nstr[i] <= '9')
+		nb = nb * 10 + nstr[i++] - '0';
+	return (nb * sign);
 }
 
-char	*ft_strdup(const char *str)
+/*int main(void)
 {
-	char *temp;
-
-	temp = malloc(ft_strlen(str) + 1);
-	if (temp != NULL)
-	{
-		ft_strcpy(temp, str);
-		return (temp);
-	}
-	else
-		return (NULL);
-}
-
-int	main(void)
-{
-	char	str1[] = "Ola 42!";
-
-	printf("Original: %s\n", str1);
-	printf("Duplicado: %s\n", ft_strdup(str1));
-}
+	printf("%i\n", ft_atoi(" 	 -2147483648"));
+	printf("%d\n", atoi(" 	 -2147483648"));
+}*/

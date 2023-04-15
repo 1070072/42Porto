@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 15:35:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/13 13:27:21 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/13 15:51:33 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/15 22:10:42 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_bzero(void *b, size_t len)
 {
 	size_t	i;
-	size_t	ldest;
-	size_t	lsrc;
-
-	ldest = ft_strlen(dest);
-	lsrc = ft_strlen(src);
-	if (size <= ldest)
-		return (lsrc + size);
-	while (src[i] && ((ldest + i) < (size - 1)))
+	unsigned char *str;
+	
+	str = (unsigned char*)b;
+	i = 0;
+	while (i < len)
 	{
-		dest[ldest + i] = src[i];
+		str[i] = '\0';
 		i++;
 	}
-	dest[ldest + i] = '\0';
-	return (ldest + lsrc);
 }
+
+/*int	main(void)
+{
+	char s1[] = "Ola 42!";
+	char s2[] = "Ola 42!";
+	
+	ft_bzero(s1, 0);
+	bzero(s2, 0);
+	printf("%s\n", s1);
+	printf("%s\n", s2);
+}*/
