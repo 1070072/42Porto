@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:20:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:30:14 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	*ft_memset(void *dest, int c, size_t len);
 void	*ft_memchr(const void *b, int c, size_t len);
 int		ft_memcmp(const void *b1, const void *b2, size_t len);
 void	ft_bzero(void *b, size_t len);
+void	*ft_calloc(size_t number, size_t size);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);

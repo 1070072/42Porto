@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:13:56 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:11:01 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:32:53 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	*ft_calloc(size_t number, size_t size)
 {
-	void *ptr;
-	if (number == 0 || size == 0)
-		return (0);	
+	char	*ptr;
+
 	ptr = malloc(number * size);
+	if (!ptr)
+		return (0);
 	ft_memset(ptr, 0, number * size);
-	return (ptr);	
+	return (ptr);
 }
 
 /* int	main(void)
