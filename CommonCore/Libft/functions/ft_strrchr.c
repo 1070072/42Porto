@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:33:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:14:47 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:29:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(str);
 	if (*str == '\0')

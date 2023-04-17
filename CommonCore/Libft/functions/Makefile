@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 22:23:12 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/04/16 09:53:55 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/04/17 17:14:22 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,15 @@ CC			= gcc -Wall -Wextra -Werror
 
 %.o: %.c libft.h
 			${CC} -I. -c $< -o ${<:.c=.o}
-
+so:
+		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+		gcc -nostartfiles -shared -o libft.so $(OBJS)
+		
 all:		${NAME}
 
-$(NAME):	${OBJS} libft.h
-			ar rcs ${NAME} ${OBJS}
-
+$(NAME):	${OBJS}
+			ar -rcs ${NAME} ${OBJS}
+			
 clean:
 			rm -f ${OBJS}
 

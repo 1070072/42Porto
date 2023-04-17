@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:18:36 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/12 18:21:47 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:21:10 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 		i++;
 	return (i);
 }

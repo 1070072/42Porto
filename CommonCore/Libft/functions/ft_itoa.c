@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 15:32:25 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 11:19:13 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:08:13 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_nbrlen(long n)
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	if (n < 0)
@@ -41,7 +41,7 @@ static void	ft_putnbr_i(long n, char *str, int *i)
 		str[(*i)++] = n + '0';
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;

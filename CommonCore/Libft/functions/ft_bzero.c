@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:51:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:10:42 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:27:44 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_bzero(void *b, size_t len)
 {
-	size_t	i;
-	unsigned char *str;
-	
-	str = (unsigned char*)b;
+	size_t			i;
+	unsigned char	*str;
+
+	str = (unsigned char *)b;
 	i = 0;
 	while (i < len)
 	{

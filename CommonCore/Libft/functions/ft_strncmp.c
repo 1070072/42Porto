@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:47:37 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:14:25 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:27:22 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t size)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (i < size && (s1[i] == s2[i]) && s1[i] != '\0')
 		i++;

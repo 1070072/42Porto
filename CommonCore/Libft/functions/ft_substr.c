@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:20:41 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:15:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:11:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char 	*substr;
-		
+
 	i = 0;
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)

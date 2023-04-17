@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:30:38 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:08:38 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:22:19 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_atoi(const char *nstr)
 {
 	size_t	i;
-	int 	sign;
-	int 	nb;
-		
+	int		sign;
+	int		nb;
+
 	nb = 0;
 	sign = 1;
 	i = 0;
@@ -25,7 +25,7 @@ int	ft_atoi(const char *nstr)
 		i++;
 	if (nstr[i] == '-' || nstr[i] == '+')
 	{
-		if (nstr[i] == '-') 
+		if (nstr[i] == '-')
 			sign = sign * -1;
 		i++;
 	}

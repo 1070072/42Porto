@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:50:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:13:24 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:26:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*ft_strcpy(char *dest, const char *src)
 
 char	*ft_strdup(const char *str)
 {
-	char *temp;
+	char	*temp;
 
 	temp = malloc(ft_strlen(str) + 1);
 	if (temp != NULL)
