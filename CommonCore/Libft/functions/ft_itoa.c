@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 15:32:25 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 17:08:13 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:20:14 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ char	*ft_itoa(int n)
 	long	nbr;
 
 	nbr = n;
-	if ((str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1))) == NULL)
+	str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	if (nbr < 0)

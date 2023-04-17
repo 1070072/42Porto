@@ -6,17 +6,17 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 16:34:51 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:27:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-#define	LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

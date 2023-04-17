@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:24:10 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 17:27:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 19:10:16 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ char	*ft_strchr(const char *str, int c)
 	char *s1 = "Ola 42!";
 
 	printf("%p | %p\n", ft_strchr(s1, '\0'), strchr(s1, '\0'));
-	printf("%s | %s\n", ft_strchr(s1, 'a'), strchr(s1, 'a'));
+	printf("%s | %s\n", ft_strchr(s1, 'l'), strchr(s1, 'l'));
 } */

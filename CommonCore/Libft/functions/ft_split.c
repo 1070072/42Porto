@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 17:09:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:23:11 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_cntwrds(char const *s, char c)
 {
-    int	i;
-    int	words;
+	int	i;
+	int	words;
 
 	i = 0;
 	words = 0;
@@ -23,7 +23,7 @@ static int	ft_cntwrds(char const *s, char c)
 	{
 		if (s[i] != '\0' && (s[i + 1] == c || s[i + 1] == '\0'))
 			words++;
-		i++;        
+		i++;
 	}
 	return (words);
 }
@@ -43,12 +43,12 @@ static int	*ft_strposi(char const *s, char c, int words)
 		while (s[i] != '\0' && s[i] != c)
 			i++;
 		posi[++j] = i - 1;
-		i++;        
+		i++;
 	}
 	return (posi);
 }
 
-static char **ft_substrings(char const *s, int words, int *posi)
+static char	**ft_substrings(char const *s, int words, int *posi)
 {
 	char	**out;
 	int		i;
@@ -71,7 +71,7 @@ static char **ft_substrings(char const *s, int words, int *posi)
 		j = j + 2;
 	}
 	out[i] = NULL;
-	return (out);  
+	return (out);
 }
 
 char	**ft_split(char const *s, char c)

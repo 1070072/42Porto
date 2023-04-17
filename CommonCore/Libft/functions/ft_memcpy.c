@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:33:11 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 17:08:52 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:20:40 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 	size_t	i;
 
 	i = -1;
-	if(!dest && !src)
+	if (!dest && !src)
 		return (NULL);
 	while (++i < len)
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];

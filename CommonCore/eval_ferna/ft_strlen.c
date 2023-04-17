@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: fernacar <fernacar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 19:15:37 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 18:23:45 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/11 20:21:11 by fernacar          #+#    #+#             */
+/*   Updated: 2023/04/11 20:24:15 by fernacar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_strlen(const char *s)
 {
-	long	nb;
+	size_t	i;
 
-	nb = n;
-	if (nb < 0)
-	{
-		nb = nb * -1;
-		ft_putchar_fd('-', fd);
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
-	else
-		ft_putchar_fd(nb + '0', fd);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
