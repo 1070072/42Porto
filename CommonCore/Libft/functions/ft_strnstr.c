@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 09:13:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/15 22:14:35 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:02:40 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		while (big[i + j] == little[j] && big[i + j] != '\0')
 			j++;
-		if (little[j] == '\0')
+		if (little[j] == '\0' && big[i + j] == '\0')
 			return ((char *)big + i);
+		else
+			return (NULL);
 		i++;
 		j = 0;
 	}
@@ -35,11 +37,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 /* int	main(void)
 {
-	char *s1 = "Ola 42 ola!";
-	char *s2 = "42";
+	char *s1 = "MZIRIBMZIRIBMZE123";
+	char *s2 = "MZIRIBMZE";
 	
-	printf("%s\n", ft_strnstr(s1, s2, 5));
-	printf("%s\n", strnstr(s1, s2, 6));
+	printf("%s\n", ft_strnstr(s1, s2, 9));
+	printf("%s\n", strnstr(s1, s2, 9));
 	printf("%s\n", ft_strnstr(s1, s2, 3));
 	printf("%s\n", strnstr(s1, s2, 3));
-} */
+}  */

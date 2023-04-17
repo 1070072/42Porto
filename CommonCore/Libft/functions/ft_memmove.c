@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:20:44 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 12:16:30 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:46:01 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,4 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	while (++i < 4)
 		printf("%i | %i\n", s22[i], s222[i]);
 	printf("%s | %s\n", ft_memmove(s3, s1, 2), memmove(s3, s1, 2));
-}
- */
+} */
