@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 17:36:44 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 10:35:50 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/18 12:38:04 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/18 12:44:01 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	char	*join;
-	size_t	i;
-	size_t	j;
+	t_list	*new;
 
-
-	i = -1;
-	j = -1;
-	join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!join)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	while (s1[++i])
-		join[i] = s1[i];
-	while (s2[++j])
-		join[j + i] = s2[j];
-	join[i + j] = '\0';
-	return (join);
+	new->content = content;
+	new->next = NULL;
+	return (new);	
 }
-
-/* int main()
-{
-    char *s1 = "Ola ";
-    char *s2 = "42!";
-    char *out = ft_strjoin(s1, s2);
-
-	printf("%s\n", out);
-} */

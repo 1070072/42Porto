@@ -6,10 +6,14 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 22:23:12 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/04/17 19:14:08 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/04/18 12:34:20 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME		= libft.a
+CC			= gcc -Wall -Wextra -Werror
+AR			= ar -rcs
+RM			= rm -rf
 SRCS		= ft_atoi.c \
 			  ft_bzero.c \
 			  ft_calloc.c \
@@ -45,26 +49,34 @@ SRCS		= ft_atoi.c \
 			  ft_tolower.c \
 			  ft_toupper.c
 OBJS		= ${SRCS:.c=.o}
-NAME		= libft.a
-CC			= gcc -Wall -Wextra -Werror
 
-%.o: %.c libft.h
-			${CC} -I. -c $< -o ${<:.c=.o}
+BONUS_SRCS 	= ft_lstnew.c \
+			  ft_lstadd_front.c \
+			  ft_lstsize.c \
+			  ft_lstlast.c \
+			  ft_lstadd_back.c \
+			  ft_lstdelone.c \
+			  ft_lstclear.c \
+			  ft_lstiter.c \
+			  ft_lstmap.c
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
 #so:
 #		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 #		gcc -nostartfiles -shared -o libft.so $(OBJS)
 		
-all:		${NAME}
+all: $(NAME)
 
-$(NAME):	${OBJS}
-			ar -rcs ${NAME} ${OBJS}
-			
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+bonus: $(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+
 clean:
-			rm -f ${OBJS}
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean:		clean
-			rm -f ${NAME}
+fclean: clean
+	$(RM) $(NAME)
 
-re:			fclean all
-
-.PHONY:		all clean fclean re bonus
+re: fclean all

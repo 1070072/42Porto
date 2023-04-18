@@ -6,11 +6,21 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/17 18:23:11 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/18 12:21:03 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
 static int	ft_cntwrds(char const *s, char c)
 {
@@ -21,81 +31,82 @@ static int	ft_cntwrds(char const *s, char c)
 	words = 0;
 	while (s[i])
 	{
-		if (s[i] != '\0' && (s[i + 1] == c || s[i + 1] == '\0'))
+		if ((i == 0 && s[i] != c) || (s[i + 1] != c && s[i - 1] == c))
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static int	*ft_strposi(char const *s, char c, int words)
-{
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{	
+	char	*substr;
 	size_t	i;
-	int		j;
-	int		*posi;
 
 	i = 0;
-	j = -1;
-	posi = malloc(sizeof(int) * (words * 2));
-	while (s[i])
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	if (ft_strlen(s) < start)
+		len = 0;
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	while (i < len)
 	{
-		posi[++j] = i;
-		while (s[i] != '\0' && s[i] != c)
-			i++;
-		posi[++j] = i - 1;
+		substr[i] = s[start + i];
 		i++;
 	}
-	return (posi);
+	substr[i] = '\0';
+	return (substr);
 }
 
-static char	**ft_substrings(char const *s, int words, int *posi)
+static char	*ft_strposi(char const *s, char c, int pos)
 {
-	char	**out;
-	int		i;
-	int		j;
-	int		k;
-	int		l;
+	size_t	i;
+	size_t	j;
+	char	*subs;
 
-	i = -1;
+	i = pos;
 	j = 0;
-	l = -1;
-	out = malloc(sizeof(char *) * (words + 1));
-	while (++i < words)
-	{
-		k = -1;
-		out[i] = malloc(sizeof(char) * ((posi[j + 1] - posi[j]) + 2));
-		while (++k < ((posi[j + 1] - posi[j]) + 1))
-			out[i][k] = s[++l];
-		out[i][k] = '\0';
-		l++;
-		j = j + 2;
-	}
-	out[i] = NULL;
-	return (out);
+	while (s[i] != '\0' && s[i] != c)
+		i++;
+	subs = ft_substr(s, pos, (i - pos));
+	return (subs);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
-	int		words;
-	int		*posi;
+	int		i;
+	int		j;
 
-	words = ft_cntwrds(s, c);
-	posi = ft_strposi(s, c, words);
-	out = ft_substrings(s, words, posi);
-	if (!s || !out)
+	i = 0;
+	j = -1;
+	out = malloc(sizeof(char *) * (ft_cntwrds(s, c) + 1));
+	if (!out || !s)
 		return (NULL);
+	while (s[i])
+	{
+		if (s[i] == c)
+			i++;
+		else
+		{
+			out[++j] = ft_strposi(s, c, i);
+			i = i + ft_strlen(out[j]);
+		}
+	}
+	out[++j] = NULL; 
 	return (out);
 }
 
-/* int main()
+int main()
 {
-    char *s1 = "Ola 42";
-    char c = ' ';
+    char *s1 = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
+    char c = 'i';
     int i = -1;
     char **out = ft_split(s1, c);
 
     i = -1;
-    while (++i < 2)
+    while (++i < 25)
         printf("%s\n", out[i]);
-} */
+}
