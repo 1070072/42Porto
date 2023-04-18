@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 17:49:11 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:53:39 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 } */
-
 static int	ft_cntwrds(char const *s, char c)
 {
 	int	i;

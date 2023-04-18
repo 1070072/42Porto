@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 12:41:18 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 18:16:17 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/04/18 18:16:58 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/04/18 18:18:07 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	lstadd_back(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!*lst)
-		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
+
+
+
+
 }

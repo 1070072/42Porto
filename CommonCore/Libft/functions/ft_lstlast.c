@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:48:56 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 12:49:27 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/18 18:13:28 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-
-
-	
+	if (lst)
+	{
+		while (lst->next)
+			lst = lst->next;		
+	}
+	return (lst);	
 }
