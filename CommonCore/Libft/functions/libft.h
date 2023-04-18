@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 12:36:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:51:22 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <stdio.h>
 # include <string.h>
 
-typedef	struct s_list
+/* typedef	struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 	
-}					t_list;
+}					t_list; */
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

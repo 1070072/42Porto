@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:36:44 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 10:35:50 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:31:15 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	size_t	i;
 	size_t	j;
-
 
 	i = -1;
 	j = -1;
