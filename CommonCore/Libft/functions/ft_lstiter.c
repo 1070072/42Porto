@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:19:41 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 18:20:16 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/19 10:07:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-
-
-	
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

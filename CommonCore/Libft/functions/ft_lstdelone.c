@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:16:58 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/18 18:18:07 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:45:48 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-
-
-
-
+	del(lst->content);
+	free(lst);
 }
