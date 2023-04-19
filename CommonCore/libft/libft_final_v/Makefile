@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 22:23:12 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/04/19 11:24:24 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/04/19 14:44:14 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,10 +61,6 @@ BONUS_SRCS 	= ft_lstnew.c \
 			  ft_lstmap.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-#so:
-#		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-#		gcc -nostartfiles -shared -o libft.so $(OBJS)
-		
 all: $(NAME)
 
 $(NAME): $(OBJS)
