@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/20 15:47:31 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:15:55 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,12 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
+/* int		ft_specifier(char specifier, va_list args)
+{
+	
+
+
+
+
+} */

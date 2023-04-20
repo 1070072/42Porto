@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/20 15:59:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:15:54 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while(str[++i])
 	{
-		ft_putchar_fd(str[i], 1);		
+/* 		if (str[i] == '%')
+			count = count + ft_specifier(str[++i], args);
+		else */
+			ft_putchar_fd(str[i], 1);		
 		count++;
 	}	
 	va_end(args);
