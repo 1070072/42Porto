@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/20 17:15:55 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:25:38 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,24 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_pf(char c)
 {
-	write(fd, &c, 1);
+	return(write(1, &c, 1));
 }
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_pf(char *s)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	return(write(1, s, ft_strlen(s)));
 }
 
-/* int		ft_specifier(char specifier, va_list args)
+int	ft_specifier(char spec, va_list args)
 {
-	
-
-
-
-
-} */
+	if (spec == '%')
+		return (ft_putchar_pf('%'));
+	else if (spec == 'c')
+		return (ft_putchar_pf(va_arg(args, int)));
+	else if (spec == 's')
+		return (ft_putstr_pf(va_arg(args, char *)));
+	else
+		return (ft_putchar_pf(spec));
+}

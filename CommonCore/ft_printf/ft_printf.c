@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/20 17:32:02 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:26:08 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while(str[++i])
 	{
-/* 		if (str[i] == '%')
+ 		if (str[i] == '%')
 			count = count + ft_specifier(str[++i], args);
-		else */
-			ft_putchar_fd(str[i], 1);		
-		count++;
+		else
+		{
+			ft_putchar_pf(str[i]);
+			count++;
+		}
 	}
 	va_end(args);
 	return (count);
@@ -43,8 +45,9 @@ int main ()
 	int original;
 	int test;
 	
-	original = printf("Ola 42!\n");
-	test = ft_printf("Ola 42!\n");
+	original = printf("o:%% %s %c%c%c\n", "Ola", '4', '2', '!');
+	
+	test = ft_printf("t:%% %s %c%c%c\n", "Ola", '4', '2', '!');
 	
 	printf("Count original: %i\n", original);
 	printf("Count test: %i\n", test);
