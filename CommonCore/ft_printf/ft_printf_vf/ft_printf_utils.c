@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/21 23:36:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:02:44 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	ft_putstr_pf(char *s)
 	return (write(1, s, ft_strlen(s)));
 }
 
-int	ft_pnbase_pf(unsigned int nbr, char *base)
+int	ft_pnbase_pf(long long nbr, char *base)
 {
-	long long int	n;
-	int			length;
-	int			count;
+	long	n;
+	int		length;
+	int		count;
 
 	count = 0;
 	length = ft_strlen(base);
@@ -58,7 +58,7 @@ int	ft_pnbase_pf(unsigned int nbr, char *base)
 	return (count);
 }
 
-int	ft_putaddress(unsigned long long pointer)
+int	ft_putaddress(unsigned long int pointer)
 {
 	if (pointer == 0)
 		return (ft_putstr_pf("0x0"));
