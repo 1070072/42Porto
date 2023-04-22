@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/21 21:59:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:55:14 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_specifier(char spec, va_list args)
 	else if (spec == 'X')
 		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (spec == 'p')
-		return (ft_putaddress(va_arg(args, unsigned long int)));
+		return (ft_putaddress(va_arg(args, unsigned long long)));
 	else
 		return (ft_putchar_pf(spec));
 }
@@ -45,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[++i])
 	{
-		if (str[i] == '%')
+ 		if (str[i] == '%')
 			count += ft_specifier(str[++i], args);
 		else
 			count += ft_putchar_pf(str[i]);

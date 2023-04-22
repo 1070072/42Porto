@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/21 23:36:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:53:04 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int	ft_putstr_pf(char *s)
 	return (write(1, s, ft_strlen(s)));
 }
 
-int	ft_pnbase_pf(unsigned int nbr, char *base)
+int	ft_pnbase_pf(unsigned long long nbr, char *base)
 {
-	long long int	n;
-	int			length;
+	unsigned long long	n;
+	size_t			length;
 	int			count;
 
 	count = 0;
