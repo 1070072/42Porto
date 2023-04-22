@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/21 23:27:14 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/22 19:31:31 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int	ft_specifier(char spec, va_list args)
 	else if (spec == 'X')
 		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (spec == 'p')
-		return (ft_putaddress(va_arg(args, unsigned long long)));
+	{
+		write(1, "0x", 2);
+		return (ft_putadd_pf(va_arg(args, unsigned long long)) + 2);
+	}
 	else
 		return (ft_putchar_pf(spec));
 }
@@ -54,7 +57,7 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int main ()
+/* int main ()
 {
 	//char *coucou = "coc";
 
@@ -69,8 +72,10 @@ int main ()
 	// = printf("o:%% %s %d%i %u%p%c\n", s, 4, 2, 42, p, '!');
 	//test = ft_printf("t:%% %s %d%i %u%p%c\n", s, 4, 2, 42, p,'!');
 	
-	original = printf("%p ", (void *)-14523);
+	//original = printf("%p ", (void *)-14523);
+	original = printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
 	printf("-> %i\n", original);
-	test = ft_printf("%p ", (void *)-14523);
+	//test = ft_printf("%p ", (void *)-14523);
+	test = ft_printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
 	printf("-> %i\n", test);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/22 11:55:14 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/22 19:06:10 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int	ft_specifier(char spec, va_list args)
 	else if (spec == 'X')
 		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (spec == 'p')
-		return (ft_putaddress(va_arg(args, unsigned long long)));
+	{
+		write(1, "0x", 2);
+		return (ft_putadd_pf(va_arg(args, unsigned long long)) + 2);
+	}
 	else
 		return (ft_putchar_pf(spec));
 }
@@ -53,3 +56,24 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
+
+/* int main ()
+{
+	//char *coucou = "coc";
+
+	//printf("Number [%23.4d]\n", 42);
+    //printf("Number [%+*i]\n", 8, -42);
+	//printf(" (%d)\n", printf("%%, %c, %s, %d, %i, %u, %X, %x, %p, %p ", 'c', "Coucou", 42, -42, 2147483647, 1658, 1203658, &coucou, coucou));
+	int original;
+	int test;
+	//char *s = NULL;
+	//char *p = "YOOOO";
+	
+	// = printf("o:%% %s %d%i %u%p%c\n", s, 4, 2, 42, p, '!');
+	//test = ft_printf("t:%% %s %d%i %u%p%c\n", s, 4, 2, 42, p,'!');
+	
+	original = printf("%p ", (void *)-14523);
+	printf("-> %i\n", original);
+	test = ft_printf("%p ", (void *)-14523);
+	printf("-> %i\n", test);
+} */
