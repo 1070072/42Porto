@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:55 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/22 19:06:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:17:02 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdarg.h>
+
+# define LHEXBASE "0123456789abcdef"
+# define UHEXBASE "0123456789ABCDEF"
+# define DECBASE "0123456789"
 
 size_t	ft_strlen(const char *s);
 int		ft_specifier(char specifier, va_list args);

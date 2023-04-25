@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/22 19:18:52 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:17:46 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_putadd_pf(unsigned long long pointer)
 		count += ft_putchar_pf('-');
 	}
 	if (n < 16)
-		count += ft_putchar_pf("0123456789abcdef"[n]);
+		count += ft_putchar_pf(LHEXBASE[n]);
 	if (n >= 16)
 	{
 		count += ft_putadd_pf(n / 16);
