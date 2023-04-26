@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 22:23:12 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/04/21 21:17:41 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/04/26 08:46:01 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-
-#bonus: $(OBJS)
-#	$(AR) $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)

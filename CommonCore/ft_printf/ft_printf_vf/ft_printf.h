@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:55 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/23 10:17:02 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:46:58 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int		ft_putchar_pf(char c);
 int		ft_putstr_pf(char *s);
 int		ft_pnbase_pf(unsigned long int nbr, char *base);
 int		ft_putadd_pf(unsigned long long pointer);
+int		ft_check_p(unsigned long long pointer);
+int		ft_printf(const char *str, ...);
 
 #endif

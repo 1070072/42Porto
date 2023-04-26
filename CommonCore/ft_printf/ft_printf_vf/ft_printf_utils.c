@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:32:00 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/23 10:17:46 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:40:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,6 @@ int	ft_putadd_pf(unsigned long long pointer)
 
 	count = 0;
 	n = pointer;
-	if (pointer == 0)
-		return (ft_putstr_pf("0"));
-	if (n < 0)
-	{
-		n = n * -1;
-		count += ft_putchar_pf('-');
-	}
 	if (n < 16)
 		count += ft_putchar_pf(LHEXBASE[n]);
 	if (n >= 16)

@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/22 19:31:31 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:40:43 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,26 @@ int	ft_specifier(char spec, va_list args)
 	else if (spec == 's')
 		return (ft_putstr_pf(va_arg(args, char *)));
 	else if (spec == 'd' || spec == 'i')
-		return (ft_pnbase_pf(va_arg(args, int), "0123456789"));
+		return (ft_pnbase_pf(va_arg(args, int), DECBASE));
 	else if (spec == 'u')
-		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789"));
+		return (ft_pnbase_pf(va_arg(args, unsigned int), DECBASE));
 	else if (spec == 'x')
-		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789abcdef"));
+		return (ft_pnbase_pf(va_arg(args, unsigned int), LHEXBASE));
 	else if (spec == 'X')
-		return (ft_pnbase_pf(va_arg(args, unsigned int), "0123456789ABCDEF"));
+		return (ft_pnbase_pf(va_arg(args, unsigned int), UHEXBASE));
 	else if (spec == 'p')
-	{
-		write(1, "0x", 2);
-		return (ft_putadd_pf(va_arg(args, unsigned long long)) + 2);
-	}
+		return (ft_check_p((va_arg(args, unsigned long long))));
 	else
 		return (ft_putchar_pf(spec));
+}
+
+int ft_check_p(unsigned long long pointer)
+{
+	if (pointer == 0)
+		return(ft_putstr_pf("(nil)"));
+	else
+	write(1, "0x", 2);
+	return (ft_putadd_pf(pointer) + 2);		
 }
 
 int	ft_printf(const char *str, ...)
@@ -48,7 +54,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[++i])
 	{
- 		if (str[i] == '%')
+		if (str[i] == '%')
 			count += ft_specifier(str[++i], args);
 		else
 			count += ft_putchar_pf(str[i]);
@@ -73,9 +79,11 @@ int	ft_printf(const char *str, ...)
 	//test = ft_printf("t:%% %s %d%i %u%p%c\n", s, 4, 2, 42, p,'!');
 	
 	//original = printf("%p ", (void *)-14523);
-	original = printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
+	original = printf(" %p %p ", 0, 0);
+	//original = printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
 	printf("-> %i\n", original);
 	//test = ft_printf("%p ", (void *)-14523);
-	test = ft_printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
+	test = ft_printf(" %p %p ", 0, 0);
+	//test = ft_printf("u^m}\r>aA%p9\n6P%p*(V%x", (void *)2981823885985657916, (void *)-2649293159361375756, 521506785);
 	printf("-> %i\n", test);
 } */

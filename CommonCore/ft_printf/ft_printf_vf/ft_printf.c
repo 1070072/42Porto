@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/23 21:35:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:45:50 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@ int	ft_specifier(char spec, va_list args)
 	else if (spec == 'X')
 		return (ft_pnbase_pf(va_arg(args, unsigned int), UHEXBASE));
 	else if (spec == 'p')
-	{
-		write(1, "0x", 2);
-		return (ft_putadd_pf(va_arg(args, unsigned long long)) + 2);
-	}
+		return (ft_check_p((va_arg(args, unsigned long long))));
 	else
 		return (ft_putchar_pf(spec));
+}
+
+int	ft_check_p(unsigned long long pointer)
+{
+	if (pointer == 0)
+		return (ft_putstr_pf("(nil)"));
+	write(1, "0x", 2);
+	return (ft_putadd_pf(pointer) + 2);
 }
 
 int	ft_printf(const char *str, ...)
