@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   .get_next_line copy.c                              :+:      :+:    :+:   */
+/*   get_next_line_copy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 09:31:25 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/28 14:28:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:50:30 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 42
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (!s)
-		return (0);	
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
@@ -70,6 +70,7 @@ char	*ft_strjoin(char *bufftxt, char *temp)
 	while (temp[++j])
 		join[j + i] = temp[j];
 	join[i + j] = '\0';
+	free(bufftxt);
 	return (join);
 }
 
@@ -78,13 +79,15 @@ char	*ft_strtrim_l(char *bufftxt)
 	char	*final_line;
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
+	if (!bufftxt[i])
+		return (NULL);
 	while (bufftxt[i] && bufftxt[i] != '\n')
 		i++;
+	final_line = malloc(sizeof(char) * (i + 2));
 	if (!bufftxt)
 		return (NULL);
-	final_line = malloc(sizeof(char) * (i + 2));
 	j = -1;
 	while (++j <= i)
 		final_line[j] = bufftxt[j];
@@ -97,13 +100,18 @@ char	*ft_strtrim_r(char *bufftxt)
 	char	*next_line;
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	while (bufftxt[i] && bufftxt[i] != '\n')
 		i++;
+	if (!bufftxt[i])
+	{
+		free(bufftxt);
+		return (NULL);
+	}
+	next_line = malloc(sizeof(char) * (ft_strlen(bufftxt) - i));
 	if (!bufftxt)
 		return (NULL);
-	next_line = malloc(sizeof(char) * (ft_strlen(bufftxt) - i));
 	j = -1;
 	while (++i < ft_strlen(bufftxt))
 		next_line[++j] = bufftxt[i];
@@ -115,19 +123,24 @@ char	*ft_strtrim_r(char *bufftxt)
 char	*ft_get_text(int fd, char *bufftxt)
 {
 	char	*temp;
-	size_t	rbytes;
+	int		rbytes;
 
 	temp = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!temp)
 		return (NULL);
 	rbytes = 1;
-	while (!ft_strchr(bufftxt, '\n') && rbytes != 0)	
+	while (!ft_strchr(bufftxt, '\n') && rbytes != 0)
 	{
 		rbytes = read(fd, temp, BUFFER_SIZE);
+		if (rbytes == -1)
+		{
+			free(bufftxt);
+			return (NULL);
+		}
 		temp[rbytes] = '\0';
-		bufftxt = ft_strjoin(bufftxt, temp);	
+		bufftxt = ft_strjoin(bufftxt, temp);
 	}
-	free (temp);
+	free(temp);
 	return (bufftxt);
 }
 
@@ -153,7 +166,7 @@ int main()
 	int 	i;
 
 	i = 1;
-	fd1 = open("rick_morty.txt", O_RDONLY);
+	fd1 = open("docst", O_RDONLY);
 	
 	while (i < 22)
 	{

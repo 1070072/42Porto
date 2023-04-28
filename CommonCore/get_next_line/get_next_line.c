@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 09:31:25 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/28 14:45:20 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:39:53 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_get_text(int fd, char *bufftxt)
 		temp[rbytes] = '\0';
 		bufftxt = ft_strjoin(bufftxt, temp);
 	}
-	free (temp);
+	free(temp);
 	return (bufftxt);
 }
 
