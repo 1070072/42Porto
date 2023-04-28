@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 09:31:23 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/28 15:13:23 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:31:40 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ char	*ft_strtrim_l(char *bufftxt)
 	size_t	j;
 
 	i = 0;
-	if (!bufftxt)
+	if (!bufftxt[i])
 		return (NULL);
 	while (bufftxt[i] && bufftxt[i] != '\n')
 		i++;
+	final_line = malloc(sizeof(char) * (i + 2));
 	if (!bufftxt)
 		return (NULL);
-	final_line = malloc(sizeof(char) * (i + 2));
 	j = -1;
 	while (++j <= i)
 		final_line[j] = bufftxt[j];
@@ -97,9 +97,14 @@ char	*ft_strtrim_r(char *bufftxt)
 	i = 0;
 	while (bufftxt[i] && bufftxt[i] != '\n')
 		i++;
+	if (!bufftxt[i])
+	{
+		free(bufftxt);
+		return (NULL);
+	}
+	next_line = malloc(sizeof(char) * (ft_strlen(bufftxt) - i));
 	if (!bufftxt)
 		return (NULL);
-	next_line = malloc(sizeof(char) * (ft_strlen(bufftxt) - i));
 	j = -1;
 	while (++i < ft_strlen(bufftxt))
 		next_line[++j] = bufftxt[i];
