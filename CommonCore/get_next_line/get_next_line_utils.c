@@ -6,27 +6,31 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 09:31:23 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/28 10:35:10 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:27:29 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen_gnl(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-
+	
 	i = 0;
+	if (!s)
+		return (0);	
 	while (s[i])
 		i++;
 	return (i);
 }
 
-char	*ft_strchr_gnl(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] == (unsigned char) c)
@@ -38,7 +42,7 @@ char	*ft_strchr_gnl(const char *str, int c)
 	return (0);
 }
 
-char	*ft_strjoin_gnl(char const *s1, char const *s2)
+char	*ft_strjoin(char *bufftxt, char *temp)
 {
 	char	*join;
 	size_t	i;
@@ -46,13 +50,57 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
-	join = malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
+	if (!bufftxt)
+	{
+		bufftxt = malloc(sizeof(char) * 1);
+		bufftxt[0] = '\0';
+	}
+	join = malloc(sizeof(char) * (ft_strlen(bufftxt) + ft_strlen(temp) + 1));
 	if (!join)
 		return (NULL);
-	while (s1[++i])
-		join[i] = s1[i];
-	while (s2[++j])
-		join[j + i] = s2[j];
+	while (bufftxt[++i])
+		join[i] = bufftxt[i];
+	while (temp[++j])
+		join[j + i] = temp[j];
 	join[i + j] = '\0';
 	return (join);
+}
+
+char	*ft_strtrim_l(char *bufftxt)
+{
+	char	*final_line;
+	size_t	i;
+	size_t	j;
+	
+	i = 0;
+	while (bufftxt[i] && bufftxt[i] != '\n')
+		i++;
+	if (!bufftxt)
+		return (NULL);
+	final_line = malloc(sizeof(char) * (i + 2));
+	j = -1;
+	while (++j <= i)
+		final_line[j] = bufftxt[j];
+	final_line[j] = '\0';
+	return (final_line);
+}
+
+char	*ft_strtrim_r(char *bufftxt)
+{
+	char	*next_line;
+	size_t	i;
+	size_t	j;
+	
+	i = 0;
+	while (bufftxt[i] && bufftxt[i] != '\n')
+		i++;
+	if (!bufftxt)
+		return (NULL);
+	next_line = malloc(sizeof(char) * (ft_strlen(bufftxt) - i));
+	j = -1;
+	while (++i < ft_strlen(bufftxt))
+		next_line[++j] = bufftxt[i];
+	next_line[++j] = '\0';
+	free(bufftxt);
+	return (next_line);
 }
