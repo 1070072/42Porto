@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 09:31:25 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/04/28 15:39:53 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:04:32 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
+		return (NULL);
 	bufftxt = ft_get_text(fd, bufftxt);
 	if (!bufftxt)
 		return (NULL);
