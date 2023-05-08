@@ -1,4 +1,4 @@
-NOT: If you encounter errors like "No commands", try again with the "sudo" parameter, most likely the problem will be solved.
+NOTE: If you encounter errors like "No commands", try again with the "sudo" parameter, most likely the problem will be solved.
 
 After the SDAs are configured,
 	1-) "su" 									--> Type and login to the root account (Root password will ask the first password we set when installing the system)
