@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 12:14:56 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:27:32 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/29 10:50:43 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/29 12:40:20 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct	s_list
+typedef	struct 		s_list
 {
-	struct s_list	*next;
-	void			*data;	
+	struct	s_list	*next;
+	void			*data;
 }					t_list;
 
-t_list				*ft_list_last(t_list *begin_list);
+t_list				*ft_create_elem(void *data);
+void				ft_list_push_back(t_list **begin_list, void *data);
 
 #endif

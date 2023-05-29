@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 12:01:58 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:10:59 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/29 12:27:22 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct	s_list
 	void 			*data;
 }					t_list;
 
-t_list	*ft_create_elem(void *data);
-int	ft_list_size(t_list *begin_list);
+t_list				*ft_create_elem(void *data);
+int					ft_list_size(t_list *begin_list);
 
 #endif
