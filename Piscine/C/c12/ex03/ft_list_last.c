@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_list_last.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 10:27:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:24:22 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/29 12:16:09 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/29 12:21:08 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void    ft_print_list(t_list *list)
+t_list	*ft_list_last(t_list *begin_list)
 {
-	t_list *current = list;
+	if (!begin_list)
+		return (NULL);
+		
+	while(begin_list->next)
+		begin_list = begin_list->next;	
 	
-    while (current != NULL)
-    {
-		printf("%p/", current);
-        printf("%s -> ", (void *)current->data);
-        printf("%p\n", current->next);
-        current = current->next;
-    }
-}
-
-int    main(void)
-{
-    t_list     *list;
-    char    *text1 = "Hello 42!";
-     
-    list = ft_create_elem(text1);
-    ft_print_list(list);
-	free(list);
+	return (begin_list);
 }

@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 12:07:30 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:13:24 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/29 12:24:08 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ void    ft_print_list(t_list *list)
         printf("%s -> ", (char *)current->data);
         printf("%p\n", current->next);
         current = current->next;
-    }
-    printf("NULL\n");    
+    }   
 }
 
 int    main(void)
