@@ -5,12 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 11:32:04 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:13:40 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/29 12:07:30 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/29 12:13:24 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+
+t_list	*ft_create_elem(void *data)
+{
+	t_list *elem;
+
+	elem = malloc(sizeof(t_list));
+	if (!elem)
+		return (NULL);
+	elem->data = data;
+	elem->next = NULL;		
+
+	return (elem);
+}
 
 void    ft_print_list(t_list *list)
 {
@@ -32,7 +45,6 @@ int    main(void)
     char    	*text1 = "Hello 42!";
 	char		*text2 = "Ola 42";
 	char		*text3 = "42";
-	char 		*text4 = "I'm first";
 
 	linked_list = ft_create_elem(text1);
 	linked_list->next = ft_create_elem(text2);
@@ -41,10 +53,7 @@ int    main(void)
 	printf("Original list:\n");
 	ft_print_list(linked_list);
 
-	ft_list_push_front(&linked_list, text4);
+	printf("Size: %d\n", ft_list_size(linked_list));
 	
-	printf("New list:\n");
-	ft_print_list(linked_list);
-
 	free(linked_list);
 }
