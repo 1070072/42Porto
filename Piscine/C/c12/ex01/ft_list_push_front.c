@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 10:27:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:00:06 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/29 11:04:26 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/29 11:56:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void    ft_print_list(t_list *list)
+t_list	*ft_create_elem(void *data)
 {
-	t_list *current = list;
-	
-    while (current != NULL)
-    {
-		printf("%p=", current);
-        printf("%s->", (void *)current->data);
-        printf("%p\n", current->next);
-        current = current->next;
-    }
-    printf("NULL\n");    
+	t_list *elem;
+
+	elem = malloc(sizeof(t_list));
+	if (!elem)
+		return (NULL);
+	elem->data = data;
+	elem->next = NULL;		
+
+	return (elem);
 }
 
-int    main(void)
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-    t_list     *list;
-    char    *text1 = "Hello 42!";
-     
-    list = ft_create_elem(text1);
-    ft_print_list(list);
-	free(list);
+	t_list	*front;
+
+	if (*begin_list)
+	{
+		front = ft_create_elem(data);
+		front->next = *begin_list;
+		*begin_list = front;
+	}
+	else
+		*begin_list = ft_create_elem(data);
 }

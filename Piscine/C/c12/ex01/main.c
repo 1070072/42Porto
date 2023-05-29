@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 10:27:12 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 12:00:06 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/29 11:32:04 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/29 11:59:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void    ft_print_list(t_list *list)
 {
-	t_list *current = list;
+	t_list	*current = list;
 	
     while (current != NULL)
     {
 		printf("%p=", current);
-        printf("%s->", (void *)current->data);
+        printf("%s->", (char *)current->data);
         printf("%p\n", current->next);
         current = current->next;
     }
@@ -28,10 +28,23 @@ void    ft_print_list(t_list *list)
 
 int    main(void)
 {
-    t_list     *list;
-    char    *text1 = "Hello 42!";
-     
-    list = ft_create_elem(text1);
-    ft_print_list(list);
-	free(list);
+    t_list     *linked_list = malloc(sizeof(t_list));
+    char    	*text1 = "Hello 42!";
+	char		*text2 = "Ola 42";
+	char		*text3 = "42";
+	char 		*text4 = "I'm first";
+
+	linked_list = ft_create_elem(text1);
+	linked_list->next = ft_create_elem(text2);
+	linked_list->next->next = ft_create_elem(text3);
+	
+	printf("Original list:\n");
+	ft_print_list(linked_list);
+
+	ft_list_push_front(&linked_list, text4);
+	
+	printf("New list:\n");
+	ft_print_list(linked_list);
+
+	free(linked_list);
 }
