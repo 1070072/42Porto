@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:00:21 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 18:10:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:20:39 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,22 @@ int    main(void)
     char    	*text1 = "Hello 42!";
 	char		*text2 = "Ola 42";
 	char		*text3 = "42";
+	char		*text4 = "24";
+	char		*text5 = "bdsfg";
+
+
 
 	linked_list = ft_create_elem(text1);
 	linked_list->next = ft_create_elem(text2);
 	linked_list->next->next = ft_create_elem(text3);
-	
+	linked_list->next->next->next = ft_create_elem(text4);
+	linked_list->next->next->next->next = ft_create_elem(text5);
+		
 	printf("Original list:\n");
 	ft_print_list(linked_list);
 
-	printf("Last element:\n");
-	ft_print_list(ft_list_last(linked_list));
+	printf("Nth element:\n");
+	ft_print_list(ft_list_at(linked_list, 0));
 	
 	free(linked_list);
 }

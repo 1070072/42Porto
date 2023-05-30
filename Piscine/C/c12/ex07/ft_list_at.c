@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:56:43 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/29 15:03:50 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:20:17 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	t_list	*node;
-	int i;
+	t_list			*node;
+	unsigned int	i;
 
 	i = 0;
 	node = begin_list;
-	if (nbr < 0)
-		return (0);
-	while(i <= nbr)
+	while(i < nbr && node != NULL)
 	{
-		node = begin_list->next; 	
+		node = node->next; 	
 		i++;
 	}
-	return (node);
+	if (i == nbr && node != NULL)
+		return (node);
+	return (NULL);
 }
-
-
