@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 15:00:21 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/30 10:29:40 by jrocha-v         ###   ########.fr       */
+/*   Created: 2023/05/30 12:32:20 by jrocha-v          #+#    #+#             */
+/*   Updated: 2023/05/30 13:02:10 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,10 @@ int    main(void)
 	printf("Original list:\n");
 	ft_print_list(linked_list);
 
-	printf("Nth element:\n");
-	ft_print_list(ft_list_at(linked_list, 0));
+	ft_list_reverse(&linked_list);
+	
+	printf("Reversed list:\n");
+	ft_print_list(linked_list);
 	
 	free(linked_list);
 }
