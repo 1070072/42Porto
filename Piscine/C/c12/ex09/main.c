@@ -6,11 +6,16 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:04:54 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/30 13:09:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/31 09:53:51 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+
+void ft_mult_by3(void *data)
+{
+	*(int *)data *= 3;
+}
 
 t_list	*ft_create_elem(void *data)
 {
@@ -32,7 +37,7 @@ void    ft_print_list(t_list *list)
     while (current != NULL)
     {
 		printf("%p/", current);
-        printf("%s -> ", (int *)current->data);
+        printf("%i -> ", *(int*)current->data);
         printf("%p\n", current->next);
         current = current->next;
     }
@@ -40,23 +45,23 @@ void    ft_print_list(t_list *list)
 
 int    main(void)
 {
-    t_list     *linked_list = malloc(sizeof(t_list));
-    char    	*text1 = "Hello 42!";
-	char		*text2 = "Ola 42";
-	char		*text3 = "42";
-	char		*text4 = "24";
-	char		*text5 = "bdsfg";
+    t_list	*linked_list = malloc(sizeof(t_list));
+    int    	n1 = 1;
+	int		n2 = 2;
+	int		n3 = 3;
+	int		n4 = 4;
+	int		n5 = 5;
 
-	linked_list = ft_create_elem(text1);
-	linked_list->next = ft_create_elem(text2);
-	linked_list->next->next = ft_create_elem(text3);
-	linked_list->next->next->next = ft_create_elem(text4);
-	linked_list->next->next->next->next = ft_create_elem(text5);
+	linked_list = ft_create_elem(&n1);
+	linked_list->next = ft_create_elem(&n2);
+	linked_list->next->next = ft_create_elem(&n3);
+	linked_list->next->next->next = ft_create_elem(&n4);
+	linked_list->next->next->next->next = ft_create_elem(&n5);
 		
 	printf("Original list:\n");
 	ft_print_list(linked_list);
 
-	ft_list_reverse(&linked_list);
+	ft_list_foreach(linked_list, &ft_mult_by3);
 	
 	printf("Reversed list:\n");
 	ft_print_list(linked_list);
